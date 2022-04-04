@@ -1,54 +1,78 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="js/aframe-ar-nft.js"></script>
- 
-<style>
-  .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  }
-</style>
- 
-<body style="margin : 0px; overflow: hidden;">
-  <!-- minimal loader shown until image descriptors are loaded -->
-  <div class="arjs-loader">
-    <div>Loading, please wait...</div>
-  </div>
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
-    <!-- 这里是图像标记的配置，下面的url就是图像标记文件的地址，在官方示例中这里使用了cors代理避免跨域问题，作者在这里并没有进行更改 -->
-    <a-nft
-      type="nft"
-      url="https://arjs-cors-proxy.herokuapp.com/https://lelexiaotian.github.io/testarr1gu8/image/qiche"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-      <!-- 这里是一个模型实体，gltf-model是模型的地址，在官方示例中这里同样使用了cors代理避免跨域问题，作者在这里并没有进行更改 -->
-      <a-entity
-        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://lelexiaotian.github.io/testarr1gu8/module/qiche.gltf"
-        scale="5 5 5"
-        position="50 150 0"
-      >
-      </a-entity>
-    </a-nft>
-    <a-entity camera></a-entity>
-  </a-scene>
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>A-Frame简明教程之实体组件系统</title>
+        <!--导入aframe库-->
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+        <!--注册组件的JS，一般写在外部JS中，这里为了现实方便放在页面内部JS中。-->
+        <script type="text/javascript">
+            //随机颜色
+            AFRAME.registerComponent('random-color', {
+              schema: {
+                min: {default: {x: 0, y: 0, z: 0}, type: 'vec3'},
+                max: {default: {x: 1, y: 1, z: 1}, type: 'vec3'}
+              },
+
+              update: function () {
+                var data = this.data;
+                var max = data.max;
+                var min = data.min;
+                this.el.setAttribute('material', 'color', '#' + new THREE.Color(
+                  Math.random() * max.x + min.x,
+                  Math.random() * max.y + min.y,
+                  Math.random() * max.z + min.z
+                ).getHexString());
+              }
+            }); 
+            //随机位置
+            AFRAME.registerComponent('random-position', {
+              schema: {
+                min: {default: {x: -10, y: -10, z: -10}, type: 'vec3'},
+                max: {default: {x: 10, y: 10, z: 10}, type: 'vec3'}
+              },
+
+              update: function () {
+                var data = this.data;
+                var max = data.max;
+                var min = data.min;
+                this.el.setAttribute('position', {
+                  x: Math.random() * (max.x - min.x) + min.x,
+                  y: Math.random() * (max.y - min.y) + min.y,
+                  z: Math.random() * (max.z - min.z) + min.z
+                });
+              }
+            });
+            //生成盒子
+            AFRAME.registerComponent('entity-generator', {
+              schema: {
+                mixin: {default: ''},
+                num: {default: 1000}
+              },
+
+              init: function () {
+                var data = this.data;
+
+                // 使用指定的mixin生成实体
+                for (var i = 0; i < data.num; i++) {
+                  var entity = document.createElement('a-entity');
+                  entity.setAttribute('mixin', data.mixin);
+                  this.el.appendChild(entity);
+                }
+              }
+            });
+        </script>
+    </head>
+    <body>
+        <a-scene>
+            <!--资源库-->
+            <a-assets>
+                <!--利用混合的方式定制模版-->
+                <a-mixin id="random" geometry="primitive: box" random-position random-color>
+                </a-mixin>
+            </a-assets>
+            <!--生成实体-->
+            <a-entity entity-generator="mixin:random;num:1000;"></a-entity>
+        </a-scene>
+    </body>
+</html>
