@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/aframe.min.js"></script>
+		<script src="js/cursor-scale.js"></script>
+		<script src="./js/on-click.js"></script>
+	</head>
+	<body>
+		<a-scene>
+			<a-camera><a-cursor></a-cursor></a-camera>
+			<a-sphere id="sphere" on-click cursor-scale position="0 0 -15" color="#ff0000" radius="2"></a-sphere>
+		</a-scene>
+		<script>
+               sphere.addEventListener("click",function(){
+				   window.open("main.html")
+			   })
+		</script>
+	</body>
+</html>
