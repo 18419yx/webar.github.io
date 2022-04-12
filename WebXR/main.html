@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Solar System</title>
+		<script src="./js/aframe.min.js"></script>
+		<script src="js/cursor-scale.js"></script>
+		<script src="js/aframe-mouse-cursor-component.min.js"></script>
+		<style>
+		   .div{
+			   width: 15%;
+			   height: 10%;
+			   background-color: rgba(255,255,255,0.2);
+			   position: fixed;
+			   top: 0%;
+			   top: 0%;
+			   font-size: 18px;
+			   color: #FFFFFF;
+		   }
+		</style>
+	</head>
+	<body>
+<!-- 		<script>
+		   AFRAME.registerComponent("ccc",{
+			   init:function(){
+
+			   }
+		   })
+		</script> -->
+		<a-scene cursor="rayOrigin:mouse">
+			<a-assets>
+				<img id="Sun" src="img/Sun.jpg" />
+				<img id="Earth" src="img/Earth.png" />
+				<img id="Jupiter" src="img/Jupiter.jpg" />
+				<img id="Venus" src="img/Venus.jpg" />
+				<img id="Mars" src="img/Mars.jpg" />
+				<img id="Mercury" src="img/Mercury.jpg" />
+				<img id="Saturn" src="img/Saturn.png" />
+				<img id="Uranus" src="img/Uranus.jpg" />
+				<img id="Neptune" src="img/Neptune.jpg" />
+				<img id="Ring" src="img/Ring.jpg" />
+				<img id="sky" src="img/宇宙4K%20(5).jpg" />
+			</a-assets>
+			<!-- 摄像机 -->
+			<a-entity id="rig" position="0 10 25"><a-camera id="camera"></a-camera></a-entity>
+			<!-- 太阳 -->
+			<a-sphere cursor-scale id="sun" position="0 0 0" src="#Sun" radius="3" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear"></a-sphere>
+			<a-text id="text-sun" value="sun" color="#fff" scale="5 5 5" position="-0.9 5.5 0" font="mozillavr" visible="false"></a-text>
+	
+			<!-- 水星 -->
+			<a-ring color="white" rotation="-90 0 0" radius-inner="4.99" radius-outer="5.01"></a-ring>
+			<a-entity position="5 0 0" pivot="-5 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:15000;easing:linear">
+				<a-sphere cursor-scale id="mercury" src="#Mercury" radius="0.5" animation="property:rotation;to:0 360 0;loop:true;dur:10000;easing:linear"></a-sphere>
+			</a-entity>
+			
+			<!-- 金星 -->
+			<a-ring color="white" rotation="-90 0 0" radius-inner="8.99" radius-outer="9.01"></a-ring>
+			<a-entity position="9 0 0" pivot="-9 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				<a-sphere cursor-scale id="venus" src="#Venus" radius="1" animation="property:rotation;to:0 -360 0;loop:true;dur:10000;easing:linear"></a-sphere>
+			</a-entity>
+			
+			<!-- 地球 -->
+			<a-ring color="white" rotation="-90 0 0" radius-inner="12.99" radius-outer="13.01"></a-ring>
+			<a-entity position="13 0 0" pivot="-13 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:25000;easing:linear">
+				<a-sphere cursor-scale id="earth" src="#Earth" radius="1.1" animation="property:rotation;to:0 360 0;loop:true;dur:10000;easing:linear"></a-sphere>
+			</a-entity>
+			
+			<!-- pivot属性控制公转，以实体本身坐标确定旋转点 -->
+			<!-- <a-entity id="sphere" geometry="primitive:sphere" material="color:black" position="0 5 0"></a-entity> -->
+			<!-- 火星 -->
+			<a-ring color="white" rotation="-90 0 0" radius-inner="16.99" radius-outer="17.01"></a-ring>
+			<a-entity position="17 0 0" pivot="-17 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:30000;easing:linear">
+				<a-sphere cursor-scale id="mars" src="#Mars" radius="0.8" animation="property:rotation;to:0 360 0;loop:true;dur:10000;easing:linear"></a-sphere>
+			</a-entity>
+			
+			<!-- 木星 -->
+			<a-ring color="white" rotation="-90 0 0" radius-inner="20.99" radius-outer="21.01"></a-ring>
+			<a-entity position="21 0 0" pivot="-21 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:35000;easing:linear">
+				<a-sphere cursor-scale id="jupiter" src="#Jupiter" radius="1.5" animation="property:rotation;to:0 360 0;loop:true;dur:15000;easing:linear"></a-sphere>
+			</a-entity>
+			
+			<!-- 土星 -->
+			<a-ring color="white" rotation="-90 0 0" radius-inner="24.99" radius-outer="25.01"></a-ring>
+			<a-entity position="25 0 0" pivot="-25 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:40000;easing:linear">
+				<a-sphere cursor-scale id="saturn" src="#Saturn" radius="1.4" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear"><a-ring src="#Ring" radius-inner="2.0" radius-outer="2.3" rotation="-60 0 0"></a-ring></a-sphere>
+			</a-entity>
+			
+			<!-- 天王星 -->
+			<a-ring color="white" rotation="-90 0 0" radius-inner="28.99" radius-outer="29.01"></a-ring>
+			<a-entity position="29 0 0" pivot="-29 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:70000;easing:linear">
+				<a-sphere cursor-scale id="uranus" src="#Uranus" radius="1" animation="property:rotation;to:0 360 0;loop:true;dur:25000;easing:linear"></a-sphere>
+			</a-entity>
+			
+			<!-- 海王星 -->
+			<a-ring color="white" rotation="-90 0 0" radius-inner="32.99" radius-outer="33.01"></a-ring>
+			<a-entity position="33 0 0" pivot="-33 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:100000;easing:linear">
+				<a-sphere cursor-scale id="neptune" src="#Neptune" radius="1" animation="property:rotation;to:0 360 0;loop:true;dur:30000;easing:linear"></a-sphere>
+			</a-entity>
+			
+			<a-sky src="#sky"></a-sky>
+			<a-light type="ambient" color="white"></a-light>
+		</a-scene>
+		<div class="div">
+			<span>注：场景内模型比例等数据均已进行调整，与真实数据有出入,详情以真实数据为主</span>
+		</div>
+		<script>
+		   var text = document.querySelector("#text-sun")
+           sun.addEventListener("mouseenter",function(){
+			   text.setAttribute("visible",true)
+		   })
+		   sun.addEventListener("mouseleave",function(){
+			   text.setAttribute("visible",false)
+		   })
+		   sun.addEventListener("click",function(){
+			   window.open("planet/sun.html")
+			   window.close()
+		   })
+		   mercury.addEventListener("click",function(){
+		   			   window.open("planet/mercury.html")
+		   			   window.close()
+		   })
+		   venus.addEventListener("click",function(){
+		   			   window.open("planet/venus.html")
+		   			   window.close()
+		   })
+		   earth.addEventListener("click",function(){
+		   			   window.open("planet/earth.html")
+		   			   window.close()
+		   })
+		   mars.addEventListener("click",function(){
+		   			   window.open("planet/mars.html")
+		   			   window.close()
+		   })
+		   jupiter.addEventListener("click",function(){
+		   			   window.open("planet/jupiter.html")
+		   			   window.close()
+		   })
+		   saturn.addEventListener("click",function(){
+		   			   window.open("planet/saturn.html")
+		   			   window.close()
+		   })
+		   uranus.addEventListener("click",function(){
+		   			   window.open("planet/uranus.html")
+		   			   window.close()
+		   })
+		   neptune.addEventListener("click",function(){
+		   			   window.open("planet/neptune.html")
+		   			   window.close()
+		   })
+		</script>
+	</body>
+</html>

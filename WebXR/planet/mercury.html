@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>水星</title>
+		<script src="../js/aframe.min.js"></script>
+		<style>
+		   .but{
+			   width: 50px;
+			   height: 50px;
+			   border-radius: 50px;
+			   background-color: aliceblue;
+			   position: fixed;
+			   top: 1%;
+			   left: 1%;
+		   }
+		</style>
+	</head>
+	<body>
+		<a-scene>
+			<a-asset>
+				<img id="Mercury" src="../img/Mercury.jpg" />
+			</a-asset>
+			<a-entity>
+				<a-camera id="camera" position="0 0 0"><a-cursor color="#fff" scale="0.5 0.5 0.5"></a-cursor></a-camera>
+			</a-entity>
+			<a-sphere 
+			    id="s"
+			    src="#Mercury" 
+				radius="3" 
+				position="0 0 -10"
+				animation="property:rotation;to:0 360 0;loop:true;dur:15000;easing:linear">
+			</a-sphere>
+			<a-plane width="4" height="2" color="#a6a6a6" position="-5 0 -5" rotation="0 45 0"></a-plane>
+			<a-plane width="4" height="2" color="#a6a6a6" position="5 0 -5" rotation="0 -45 0"></a-plane>
+			<a-sky color="#000000"></a-sky>
+		</a-scene>
+		<button class="but"></button>
+		<script>
+           document.querySelector(".but").addEventListener("click",function(){
+			   
+		   })
+		</script>
+	</body>
+</html>
