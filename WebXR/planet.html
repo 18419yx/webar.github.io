@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>星球</title>
+		<script src="js/aframe.min.js"></script>
+		<script src="js/aframe-mouse-cursor-component.min.js"></script>
+		<script src="js/usingJS.js"></script>
+	</head>
+	<body>
+		<a-scene cursor="rayOrigin:mouse">
+			<a-asset>
+				<img id="Sun" src="img/Sun.jpg" />
+				<img id="Earth" src="img/Earth.jpg" />
+				<img id="Jupiter" src="img/Jupiter.jpg" />
+				<img id="Venus" src="img/Venus.jpg" />
+				<img id="Mars" src="img/Mars.jpg" />
+				<img id="Mercury" src="img/Mercury.jpg" />
+				<img id="Saturn" src="img/Saturn.png" />
+				<img id="Uranus" src="img/Uranus.jpg" />
+				<img id="Neptune" src="img/Neptune.jpg" />
+				<img id="Sky" src="img/Sky.jpg" />
+			</a-asset>
+			
+			<a-entity camera look-controls wasd-controls="enabled:false"></a-entity>
+			
+			<a-text cursor-enterandouter id="back" value="Back" position="-14 7.5 -10" scale="4 4 4" font=exo2bold animation="property:object3D.position.y;to:7.65;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+			
+			<a-entity cursor-scale position="-6 5 -10" animation="property:object3D.position.y;to:5.4;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere 
+				id="sun"
+				src="#Sun"
+				radius="2"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity cursor-scale position="0 5 -10" animation="property:object3D.position.y;to:5.4;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere
+				id="mercury"
+				src="#Mercury"
+				radius="0.5"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity cursor-scale position="6 5 -10" animation="property:object3D.position.y;to:5.4;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere
+				id="venus"
+				src="#Venus"
+				radius="1"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity cursor-scale position="-6 -0.4 -10" animation="property:object3D.position.y;to:0;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere
+				id="earth"
+				src="#Earth"
+				radius="1.1"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity cursor-scale position="0 -0.4 -10" animation="property:object3D.position.y;to:0;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere
+				id="mars"
+				src="#Mars"
+				radius="0.7"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity cursor-scale position="6 -0.4 -10" animation="property:object3D.position.y;to:0;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere
+				id="jupiter"
+				src="#Jupiter"
+				radius="1.5"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity cursor-scale position="-6 -5 -10" animation="property:object3D.position.y;to:-4.6;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere
+				id="saturn"
+				src="#Saturn"
+				radius="1.3"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity cursor-scale position="0 -5 -10" animation="property:object3D.position.y;to:-4.6;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere
+				id="uranus"
+				src="#Uranus"
+				radius="1"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity cursor-scale position="6 -5 -10" animation="property:object3D.position.y;to:-4.6;dir:alternate;loop:true;dur:2000;easing:linear">
+				<a-sphere
+				id="neptune"
+				src="#Neptune"
+				radius="1"
+				animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+				</a-sphere>
+			</a-entity>
+			
+			<a-sky src="#Sky"></a-sky>
+		</a-scene>
+		<script>
+		   document.querySelector("#back").addEventListener("click",function(){
+			   window.open("homepage.html")
+			   window.close()
+		   })
+		   sun.addEventListener("click",function(){
+		   			   window.open("planet/sun.html")
+		   			   window.close()
+		   })
+		   mercury.addEventListener("click",function(){
+		   			   window.open("planet/mercury.html")
+		   			   window.close()
+		   })
+		   venus.addEventListener("click",function(){
+		   			   window.open("planet/venus.html")
+		   			   window.close()
+		   })
+		   earth.addEventListener("click",function(){
+		   			   window.open("planet/earth.html")
+		   			   window.close()
+		   })
+		   mars.addEventListener("click",function(){
+		   			   window.open("planet/mars.html")
+		   			   window.close()
+		   })
+		   jupiter.addEventListener("click",function(){
+		   			   window.open("planet/jupiter.html")
+		   			   window.close()
+		   })
+		   saturn.addEventListener("click",function(){
+		   			   window.open("planet/saturn.html")
+		   			   window.close()
+		   })
+		   uranus.addEventListener("click",function(){
+		   			   window.open("planet/uranus.html")
+		   			   window.close()
+		   })
+		   neptune.addEventListener("click",function(){
+		   			   window.open("planet/neptune.html")
+		   			   window.close()
+		   })
+		</script>
+	</body>
+</html>

@@ -27,19 +27,25 @@
             }); 
             //随机位置
             AFRAME.registerComponent('random-position', {
-              schema: {
+/*              schema: {
                 min: {default: {x: -10, y: -10, z: -10}, type: 'vec3'},
                 max: {default: {x: 10, y: 10, z: 10}, type: 'vec3'}
-              },
+              }, */
 
               update: function () {
                 var data = this.data;
-                var max = data.max;
-                var min = data.min;
+/*                var max = data.max;
+                var min = data.min; */
+				
+				var radium = Math.random() * 4 + 25;
+				var xx = (Math.random() > 0.5? 1 : -1) * (Math.random() * radium);
+				var yy = (Math.random() > 0.5? 1 : -1) * Math.sqrt(radium * radium - xx * xx);
+				
+				
                 this.el.setAttribute('position', {
-                  x: Math.random() * (max.x - min.x) + min.x,
-                  y: Math.random() * (max.y - min.y) + min.y,
-                  z: Math.random() * (max.z - min.z) + min.z
+                  x: xx,
+                  y: -40,
+                  z: yy
                 });
               }
             });
@@ -47,7 +53,7 @@
             AFRAME.registerComponent('entity-generator', {
               schema: {
                 mixin: {default: ''},
-                num: {default: 1000}
+                num: {default: 50}
               },
 
               init: function () {
@@ -68,11 +74,11 @@
             <!--资源库-->
             <a-assets>
                 <!--利用混合的方式定制模版-->
-                <a-mixin id="random" geometry="primitive: box" random-position random-color>
+                <a-mixin id="random" geometry="primitive: sphere ;radius:0.1" random-position>
                 </a-mixin>
             </a-assets>
             <!--生成实体-->
-            <a-entity entity-generator="mixin:random;num:1000;"></a-entity>
+            <a-entity entity-generator="mixin:random;num:50;"></a-entity>
         </a-scene>
     </body>
 </html>

@@ -1,7 +1,6 @@
 
 		   AFRAME.registerComponent('cursor-enterandouter',{
 			   init:function(){
-				   var text = document.querySelector("#text")
 				   this.el.addEventListener('mouseenter',function(){
 					   this.setAttribute("color","#ffff00")
 					   this.setAttribute("scale","5 5 5")

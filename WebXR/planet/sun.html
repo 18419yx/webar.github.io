@@ -1,37 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta charset="utf-8">
   <title>太阳</title>
   <script src="../js/aframe.min.js"></script>
   <script src="../js/aframe-mouse-cursor-component.min.js"></script>
-  <script src="../js/cursor-scale.js"></script>
-  <style>
-    .d1{
-		font-family: 宋体;
-		color: #FFFFFF;
-		width: 30%;
-		height: 90%;
-		background-color: rgba(255,255,255,0.35);
-		position: fixed;
-		top: 5%;
-		left: 65%;
-		visibility: hidden;
-	}
-	span{
-		font-size: 20px;
-		line-height: 30px;
-	}
-  </style>
+  <script src="../js/usingJS.js"></script>
 </head>
 
 <body>
   <a-scene cursor="rayOrigin:mouse">
 	  <a-asset>
 		  <img id="Sun" src="../img/Sun.jpg" />
-		  <img id="Star" src="../img/宇宙4K%20(5).jpg" />
+		  <img id="Sky" src="../img/Sky.jpg"/>
+		  <video id="myvideo" src="../video/sun.mp4"></video>
 	  </a-asset>
 	<a-entity>
 		<a-camera position="0 0 0"></a-camera>
+	</a-entity>
+	
+	<a-entity>
+		<a-text cursor-enterandouter id="back" value="Back" position="-12 6 -10" scale="4 4 4" font=exo2bold animation="property:object3D.position.y;to:6.15;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+		<a-text cursor-enterandouter id="home" value="Home" position="-12 7.5 -10" scale="4 4 4" font=exo2bold animation="property:object3D.position.y;to:7.65;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
 	</a-entity>
 	
 	<a-entity position="0 0 -10">
@@ -43,25 +32,32 @@
 		</a-sphere>
 	</a-entity>
 	
-	<a-entity cursor-scale id="pll" position="0 5 -10" visible="false">
-			<a-text value="Brief Introduction" position="-2.7 0.3 0" scale="3 3 3" font=mozillavr></a-text>
+	<a-entity id="pll" position="0 5 -10" visible="true">
+			<a-text id="b1" scaler value="Attribute" position="-1.5 2 0" scale="3 3 3" font=exo2bold></a-text>
+			<!-- <a-text id="b2" scaler value="Basic Introduction" position="-6 0 0" scale="3 3 3" font=exo2bold></a-text> -->
+			<a-text id="b3" scaler value="Video" position="-1 1 0" scale="3 3 3" font=exo2bold></a-text>
+			<a-text id="b4" scaler value="Detail" position="-1 0 0" scale="3 3 3" font=exo2bold></a-text>
 	</a-entity>
 	
-	<a-entity id="pl" position="-12 2 -10" visible="false">
-		<a-text value="Name:Sun" position="0 1 0" scale="4 4 4" font=mozillavr animation="property:object3D.position.y;to:1.15;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
-		<a-text value="Radius:695500km" position="0 -2 0" scale="4 4 4" font=mozillavr animation="property:object3D.position.y;to:-1.95;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
-		<a-text value="Rotation:From West To East" position="0 -5 0" scale="4 4 4" font=mozillavr animation="property:object3D.position.y;to:-4.95;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+	<a-entity id="pl" position="-12 2 -10" rotation="0 0 0" visible="false">
+		<a-text value="Name:Sun" position="0 1 0" scale="3 3 3" font=exo2bold animation="property:object3D.position.y;to:1.15;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+		<a-text value="Radius:696300km" position="0 -1 0" scale="3 3 3" font=exo2bold animation="property:object3D.position.y;to:-0.95;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+		<a-text value="Rotation:From West To East" position="0 -3 0" scale="3 3 3" font=exo2bold animation="property:object3D.position.y;to:-2.95;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
 	</a-entity>	
 	
-	<a-sky color="lightblue"></a-sky>
+<!-- 	<a-entity id="plll" position="9 0 -10" rotation="0 0 0" visible="false">
+		<a-plane width="10" height="10" color="#000000" transparent="true" opacity="0.2">
+			<a-text position="-5 4.5 0" scale="1.8 1.8 1.8" 
+			value="The sun is the center of the solar system,The sun is the center of the solar system,The sun is the center of the solar system,The sun is the center of the solar system," >
+			</a-text>
+			<!-- <a-text color="#747474" value="太阳" position="0 -1 0" scale="3 3 3" font="../font/custom-msdf/custom-msdf.json" fontImage="../font/custom-msdf/custom.png"></a-text> -->
+		</a-plane>
+	</a-entity> -->
+	
+	<a-video id="vi" videohandler src="#myvideo" width="10" height="5" position="10 0 -10" transparent="true" opacity="0.7" visible="false"></a-video>
+	<a-sky src="#Sky"></a-sky>
   </a-scene>
-  
-  <div class="d1">
-	  <h1 align="center">图文介绍</h3><br />
-	  <span>&nbsp;&nbsp;太阳(Sun)是太阳系的中心天体，占有太阳系总体质量的99.86%。太阳系中的八大行星、小行星、流星、彗星、外海王星天体以及星际尘埃等，都围绕着太阳公转，而太阳则围绕着银河系的中心公转。</span><br />
-	  <span>&nbsp;&nbsp;太阳是位于太阳系中心的恒星，它几乎是热等离子体与磁场交织着的一个理想球体。太阳直径大约是1392000（1.392×10⁶）千米，相当于地球直径的109倍；体积大约是地球的130万倍；其质量大约是2×10³⁰千克（地球的330000倍）。从化学组成来看，现在太阳质量的大约四分之三是氢，剩下的几乎都是氦，包括氧、碳、氖、铁和其他的重元素质量少于2%，采用核聚变的方式向太空释放光和热。</span>
-  </div>
-  
+
   <script>
      function show1()
      {
@@ -81,12 +77,35 @@
 	   		   document.querySelector("#pll").setAttribute("visible","false")
 	   }
 	 }
+	 function show3()
+	 {
+	   var yn = document.querySelector("#vi").getAttribute("visible")
+	   if(yn == false){
+	   		   document.querySelector("#vi").setAttribute("visible","true")
+	   }else{
+	   		   document.querySelector("#vi").setAttribute("visible","false")
+	   }
+	 }
      document.querySelector("#s").addEventListener("click",function(){
-  	   show1()
 	   show2()
      })
-	 document.querySelector("#pll").addEventListener("click",function(){
-		 document.querySelector(".d1").setAttribute("style","visibility: visible;")
+	 document.querySelector("#b1").addEventListener("click",function(){
+	   show1()
+	 })
+	 document.querySelector("#b3").addEventListener("click",function(){
+	 		 /* document.querySelector(".d1").setAttribute("style","visibility: visible;") */
+	   show3()
+	 })
+	 document.querySelector("#back").addEventListener("click",function(){
+	 		 window.open("../main.html")
+	 		 window.close()
+	 })
+	 document.querySelector("#home").addEventListener("click",function(){
+	 		 window.open("../homepage.html")
+	 		 window.close()
+	 })
+	 document.querySelector("#b4").addEventListener("click",function(){
+	 		 window.open("../chinesetext/mars-text.html")
 	 })
   </script>
 </body>
