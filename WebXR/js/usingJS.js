@@ -10,14 +10,111 @@
 		   			   }
 		   })
 		   
+		   AFRAME.registerComponent('showmove',{
+		   			   init:function() {
+						   var el = this.el
+						   var b1 = document.querySelector("#at")
+						   var b3 = document.querySelector("#de")
+						   var pll = document.querySelector("#pll")
+						   var pl = document.querySelector("#pl")
+						   var ispl = false
+						   el.addEventListener("click", function() {
+							   el.setAttribute("animation", "autoplay:true")
+							   pll.setAttribute("visible", "true")
+						   })
+						   b1.addEventListener("click", function() {
+							   if(ispl == false) {
+								   pl.setAttribute("visible", "true")
+							   }else {
+								   pl.setAttribute("visible", "false")
+							   }
+							   ispl = !ispl
+						   })
+						   document.querySelector("#back").addEventListener("click",function(){
+						   		 window.open("../main.html")
+						   		 window.close()
+						   })
+						   document.querySelector("#home").addEventListener("click",function(){
+						   		 window.open("../homepage.html")
+						   		 window.close()
+						   })
+						   b3.addEventListener("click",function(){
+						   		 window.open("../chinesetext/mars-text.html")
+						   		 window.close()
+						   })
+					   }
+		   })
+		   
 		   AFRAME.registerComponent('scaler',{
 		   			   init:function(){
-		   						   var el = this.el
+		   				var el = this.el
 		   				   el.addEventListener('mouseenter',function(){
-		   					   el.setAttribute("scale","3.2 3.2 3.2")  
+		   					   el.setAttribute("scale","3.3 3.3 3.3")  
 		   				   })
 		   				   el.addEventListener("mouseleave",function(){
 		   				   	   el.setAttribute("scale","3 3 3")
+		   				   })
+		   			   }
+		   })
+		   
+		   AFRAME.registerComponent('showpicture', {
+		   			   init:function() {
+		   				var el = this.el
+						var mm1 = document.querySelector("#mm1")
+						var mm2 = document.querySelector("#mm2")
+						var mm3 = document.querySelector("#mm3")
+						var mm4 = document.querySelector("#mm4")
+						var mm5 = document.querySelector("#mm5")
+						var pi = document.querySelector("#pi")
+						pi.addEventListener("click", function() {
+							el.setAttribute("animation", "autoplay:true")
+						})
+						var s1 = document.querySelector("#sign1")
+						s1.addEventListener("mouseenter", function(){
+							mm1.setAttribute("visible", "true")
+						})
+						s1.addEventListener("mouseleave", function(){
+							mm1.setAttribute("visible", "false")
+						})
+						var s2 = document.querySelector("#sign2")
+						s2.addEventListener("mouseenter", function(){
+							mm2.setAttribute("visible", "true")
+						})
+						s2.addEventListener("mouseleave", function(){
+							mm2.setAttribute("visible", "false")
+						})
+						var s3 = document.querySelector("#sign3")
+						s3.addEventListener("mouseenter", function(){
+							mm3.setAttribute("visible", "true")
+						})
+						s3.addEventListener("mouseleave", function(){
+							mm3.setAttribute("visible", "false")
+						})
+						var s4 = document.querySelector("#sign4")
+						s4.addEventListener("mouseenter", function(){
+							mm4.setAttribute("visible", "true")
+						})
+						s4.addEventListener("mouseleave", function(){
+							mm4.setAttribute("visible", "false")
+						})
+						var s5 = document.querySelector("#sign5")
+						s5.addEventListener("mouseenter", function(){
+							mm5.setAttribute("visible", "true")
+						})
+						s5.addEventListener("mouseleave", function(){
+							mm5.setAttribute("visible", "false")
+						})
+		        }
+	       })
+		   
+		   AFRAME.registerComponent('scalerr',{
+		   			   init:function(){
+		   				var el = this.el
+		   				   el.addEventListener('mouseenter',function(){
+		   					   el.setAttribute("scale","4.4 4.4 4.4")  
+		   				   })
+		   				   el.addEventListener("mouseleave",function(){
+		   				   	   el.setAttribute("scale","4 4 4")
 		   				   })
 		   			   }
 		   })
@@ -26,16 +123,28 @@
 		   		   init:function(){
 		   			   var el = this.el
 		   			   var vid = document.querySelector("#myvideo")
+					   var vi = document.querySelector("#vi")
+					   /* var is = el.getAttribute("visible") */
 		   			   var playing = false
+					   var is = false
 		   			   vid.pause()
 		   			   el.addEventListener("click",function(){
-		   				   if(!playing){
+		   				   if(playing == true && is == true){
 		   					   vid.play()
 		   				   }else{
 		   					   vid.pause()
 		   				   }
 		   				   playing = !playing
 		   			   })
+					   vi.addEventListener("click", function() {
+						   if(is == false) {
+							   el.setAttribute("visible", "true")
+							   el.setAttribute("animation", "autoplay:true")
+						   }else {
+							   el.setAttribute("visible", "false")
+						   }
+						   is = !is
+					   })
 		   		   }
 		   })
 		   
@@ -52,6 +161,7 @@
 		   				   })
 		   			   }
 		   })
+
 		   
 		   AFRAME.registerComponent('boder1',{
 		   			   init:function(){
@@ -80,7 +190,7 @@
 		   					   p.setAttribute("color","#ffffff")
 		   				   })
 						   el.addEventListener("click",function(){
-						   	    window.open("planet.html")
+						   	    window.open("ar.html")
 						   	    window.close()
 						   })
 		   			   }

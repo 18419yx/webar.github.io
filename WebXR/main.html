@@ -25,6 +25,7 @@
 			<a-assets>
 				<img id="Sun" src="img/Sun.jpg" />
 				<img id="Earth" src="img/Earth.jpg" />
+				<img id="Moon" src="img/moon.jpg" />
 				<img id="Jupiter" src="img/Jupiter.jpg" />
 				<img id="Venus" src="img/Venus.jpg" />
 				<img id="Mars" src="img/Mars.jpg" />
@@ -32,15 +33,18 @@
 				<img id="Saturn" src="img/Saturn.png" />
 				<img id="Uranus" src="img/Uranus.jpg" />
 				<img id="Neptune" src="img/Neptune.jpg" />
-				<img id="Ring" src="img/Ring.jpg" />
-				<img id="Sky" src="img/Sky.jpg" />
 				<video id="myvideo" src="video/solar%20system.mp4"></video>
 				<!-- <audio src="./img/1.mp3" autoplay="autoplay" preload="auto" loop="loop"></audio> -->
-				<a-mixin id="random" geometry="primitive: sphere ;radius:0.05" material="color:#c8c8c8" random-position></a-mixin>
+				<a-mixin id="random" geometry="primitive: sphere ;radius:0.05" material="color:#ffffff" random-position></a-mixin>
 				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
 			</a-assets>
 			<!-- 摄像机 -->
-			<a-entity id="rig" position="0 10 30"><a-camera wasd-controls="fly:true"></a-camera></a-entity>
+			<a-entity id="rig" position="0 10 30">
+				<a-camera wasd-controls="fly:true">
+					<a-text id="vi" scaler value="Video" position="12.3 7.7 -10" scale="3 3 3" font=exo2bold></a-text>
+					<a-video videohandler src="#myvideo" width="8" height="4" position="10 5 -10" transparent="true" opacity="0.8" visible="false"></a-video>
+			    </a-camera>
+			</a-entity>
 			<!-- 太阳 -->
 			<a-entity>
 				<a-sphere cursor-scale id="sun" position="0 0 0" src="#Sun" radius="4" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear"></a-sphere>
@@ -62,7 +66,12 @@
 			<!-- 地球 -->
 			<a-ring color="white" rotation="-90 0 0" radius-inner="12.99" radius-outer="13.01"></a-ring>
 			<a-entity position="9.19 0 9.19" pivot="-9.19 0 -9.19" animation="property:rotation;to:0 360 0;loop:true;dur:25000;easing:linear">
-				<a-sphere cursor-scale id="earth" src="#Earth" radius="1.1" animation="property:rotation;to:0 360 0;loop:true;dur:10000;easing:linear"></a-sphere>
+				<a-sphere cursor-scale id="earth" src="#Earth" radius="1.1" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+                   <a-entity position="3 0 0" pivot="-3 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:10000;easing:linear">
+					   <a-sphere id="moon" src="#Moon" radius="0.4" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+					   </a-sphere>
+				   </a-entity>
+				</a-sphere>
 			</a-entity>
 			
 			<!-- pivot属性控制公转，以实体本身坐标确定旋转点 -->
@@ -82,7 +91,7 @@
 			<!-- 土星 -->
 			<a-ring color="white" rotation="-90 0 0" radius-inner="24.99" radius-outer="25.01"></a-ring>
 			<a-entity position="0 0 -25" pivot="0 0 25" animation="property:rotation;to:0 360 0;loop:true;dur:40000;easing:linear">
-				<a-sphere cursor-scale id="saturn" src="#Saturn" radius="1.4" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear"><a-ring src="#Ring" radius-inner="2.0" radius-outer="2.3" rotation="-60 0 0"></a-ring></a-sphere>
+				<a-sphere cursor-scale id="saturn" src="#Saturn" radius="1.4" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear"><a-ring src="#Saturn" radius-inner="2.0" radius-outer="2.3" rotation="-60 0 0"></a-ring></a-sphere>
 			</a-entity>
 			
 			<!-- 天王星 -->
@@ -99,12 +108,13 @@
 			
 			<a-entity 
 			animation="property:rotation;to:0 360 0;loop:true;dur:40000;easing:linear"
-			entity-generator="mixin:random;num:100;">
+			entity-generator="mixin:random;num:200;">
 			</a-entity>
 			
-			<a-entity entity-generator="mixin:rand;num:2000;"></a-entity>
-			
-			<a-video videohandler cursor-scale src="#myvideo" width="8" height="4" position="10 17 20"></a-video>
+			<a-entity
+			animation="property:rotation;to:0 360 0;loop:true;dur:500000;easing:linear"
+			entity-generator="mixin:rand;num:2000;">
+			</a-entity>
 			
 			<a-sky color="#000"></a-sky>
 			<a-light type="ambient" color="white"></a-light>

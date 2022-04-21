@@ -11,10 +11,10 @@
 		<a-scene cursor="rayOrigin:mouse">
 			<a-asset>
 				<img id="Sechelt" src="img/sechelt.jpg" />
-				<img id="Sky" src="img/Sky.jpg" />
 				<img id="h1" src="img/h1.jpeg" />
 				<img id="h2" src="img/h2.jpeg" />
 				<img id="h3" src="img/h3.jpeg" />
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
 			</a-asset>
 			
 			<a-entity camera look-controls="enabled:false" wasd-controls="enabled:false"></a-entity>
@@ -60,8 +60,13 @@
 				height="1.5">
 				</a-plane>
 			</a-entity>
+			
+			<a-entity
+			animation="property:rotation;to:0 360 0;loop:true;dur:500000;easing:linear"
+			entity-generator="mixin:rand;num:2000;">
+			</a-entity>
 			   
-			<a-sky src="#Sechelt"></a-sky>
+			<a-sky color="#000"></a-sky>
 		</a-scene>
 	</body>
 </html>
