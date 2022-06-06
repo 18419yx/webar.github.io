@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>学习模块</title>
+		<script src="js/aframe.min.js"></script>
+		<script src="js/aframe-mouse-cursor-component.min.js"></script>
+		<script src="js/usingJS.js"></script>
+	</head>
+	<body>
+		<a-scene cursor="rayOrigin:mouse">
+			<a-assets>
+				
+				<img id="Sun" src="img/Sun.jpg" />
+				<img id="Earth" src="img/Earth.jpg" />
+				<img id="Jupiter" src="img/Jupiter.jpg" />
+				<img id="Venus" src="img/Venus.jpg" />
+				<img id="Mars" src="img/Mars.jpg" />
+				<img id="Mercury" src="img/Mercury.jpg" />
+				<img id="Saturn" src="img/Saturn.png" />
+				<img id="Uranus" src="img/Uranus.jpg" />
+				<img id="Neptune" src="img/Neptune.jpg" />
+				
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+			</a-assets>
+			
+			<a-entity>
+				<a-camera look-controls="enabled:false" wasd-controls="enabled:false">
+							<a-plane cursor-scale id="home" width="1.2" height="0.7" position="12.5 8 -10" color="#fff">
+								<a-text value="Home" position="-0.6 0.05 0" scale="2 2 2" font=exo2bold color="#000"></a-text>
+							</a-plane>
+					
+					<a-entity position="-10 0 -20" chooselearn>
+						<!-- 太阳 -->
+						<a-entity position="0 0 0" cursor-scale class="qq">
+							<a-sphere src="#Sun" radius="2"></a-sphere>
+						</a-entity>
+						<a-ring color="white" radius-inner="3.99" radius-outer="4.01"></a-ring>
+						<!-- 水星 -->
+						<a-entity position="4 0 0" cursor-scale class="qq">
+							<a-sphere src="#Mercury" radius="0.4">
+								<a-text
+								value="Mercury" 
+								scale="2 2 2" 
+								font=exo2bold 
+								position="-1 1 0"></a-text>
+							</a-sphere>
+						</a-entity>
+						<a-ring color="white" radius-inner="6.99" radius-outer="7.01"></a-ring>
+						<!-- 金星 -->
+						<a-entity position="7 0 0" cursor-scale class="qq">
+							<a-sphere src="#Venus" radius="0.8">
+									<a-text
+									value="Venus" 
+									scale="2 2 2" 
+									font=exo2bold 
+									position="-0.6 1.5 0"></a-text>
+							</a-sphere>
+						</a-entity>
+						<a-ring color="white" radius-inner="9.49" radius-outer="9.51"></a-ring>
+						<!-- 地球 -->
+						<a-entity position="9.5 0 0" cursor-scale class="qq">
+							<a-sphere src="#Earth" radius="0.9">
+								<a-text
+								value="Earth" 
+								scale="2 2 2" 
+								font=exo2bold 
+								position="-0.6 1.5 0"></a-text>
+							</a-sphere>
+						</a-entity>
+						<a-ring color="white" radius-inner="11.99" radius-outer="12.01"></a-ring>
+						<!-- 火星 -->
+						<a-entity position="12 0 0" cursor-scale class="qq">
+							<a-sphere src="#Mars" radius="0.8">
+								<a-text
+								value="Mars" 
+								scale="2 2 2" 
+								font=exo2bold 
+								position="-0.6 1.5 0"></a-text>
+							</a-sphere>
+						</a-entity>
+						<a-ring color="white" radius-inner="14.99" radius-outer="15.01"></a-ring>
+						<!-- 木星 -->
+						<a-entity position="15 0 0" cursor-scale class="qq">
+							<a-sphere src="#Jupiter" radius="1.4">
+								<a-text
+								value="Jupiter" 
+								scale="2 2 2" 
+								font=exo2bold 
+								position="-0.6 2 0"></a-text>
+							</a-sphere>
+						</a-entity>
+						<a-ring color="white" radius-inner="18.99" radius-outer="19.01"></a-ring>
+						<!-- 土星 -->
+						<a-entity position="19 0 0" cursor-scale class="qq">
+							<a-sphere src="#Saturn" radius="1.1">
+								<a-text
+								value="Saturn" 
+								scale="2 2 2" 
+								font=exo2bold 
+								position="-0.6 1.5 0"></a-text>
+							</a-sphere>
+						</a-entity>
+						<a-ring color="white" radius-inner="21.99" radius-outer="22.01"></a-ring>
+						<!-- 天王星 -->
+						<a-entity position="22 0 0" cursor-scale class="qq">
+							<a-sphere src="#Uranus" radius="0.9">
+								<a-text
+								value="Uranus" 
+								scale="2 2 2" 
+								font=exo2bold 
+								position="-0.6 1.5 0"></a-text>
+							</a-sphere>
+						</a-entity>
+						<a-ring color="white" radius-inner="24.99" radius-outer="25.01"></a-ring>
+						<!-- 海王星 -->
+						<a-entity position="25 0 0" cursor-scale class="qq">
+							<a-sphere src="#Neptune" radius="0.9">
+								<a-text
+								value="Neptune" 
+								scale="2 2 2" 
+								font=exo2bold 
+								position="-0.6 1.5 0"></a-text>
+							</a-sphere>
+						</a-entity>
+					</a-entity>
+				</a-camera>
+			</a-entity>
+			
+			<a-entity
+			animation="property:rotation;to:0 360 0;loop:true;dur:500000;easing:linear"
+			entity-generator="mixin:rand;num:2000;">
+			</a-entity>
+			
+			<a-sky color="#000"></a-sky>
+		</a-scene>
+		
+		<script>
+			home.addEventListener("click",function(){
+						   window.open("homepage.html")
+						   window.close()
+			})
+		</script>
+		
+	</body>
+</html>

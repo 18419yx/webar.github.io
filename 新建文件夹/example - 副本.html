@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>A-Frame简明教程之实体组件系统</title>
+        <!--导入aframe库-->
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+        <!--注册组件的JS，一般写在外部JS中，这里为了现实方便放在页面内部JS中。-->
+        <script type="text/javascript">
+            //随机颜色
+            AFRAME.registerComponent('random-color', {
+              schema: {
+                min: {default: {x: 0, y: 0, z: 0}, type: 'vec3'},
+                max: {default: {x: 1, y: 1, z: 1}, type: 'vec3'}
+              },
+
+              update: function () {
+                var data = this.data;
+                var max = data.max;
+                var min = data.min;
+                this.el.setAttribute('material', 'color', '#' + new THREE.Color(
+                  Math.random() * max.x + min.x,
+                  Math.random() * max.y + min.y,
+                  Math.random() * max.z + min.z
+                ).getHexString());
+              }
+            }); 
+            //随机位置
+            AFRAME.registerComponent('random-position', {
+/*              schema: {
+                min: {default: {x: -10, y: -10, z: -10}, type: 'vec3'},
+                max: {default: {x: 10, y: 10, z: 10}, type: 'vec3'}
+              }, */
+
+              update: function () {
+                var data = this.data;
+/*                var max = data.max;
+                var min = data.min; */
+				
+				var radium = Math.random() * 4 + 25;
+				var xx = (Math.random() > 0.5? 1 : -1) * (Math.random() * radium);
+				var yy = (Math.random() > 0.5? 1 : -1) * Math.sqrt(radium * radium - xx * xx);
+				
+				
+                this.el.setAttribute('position', {
+                  x: xx,
+                  y: -40,
+                  z: yy
+                });
+              }
+            });
+            //生成盒子
+            AFRAME.registerComponent('entity-generator', {
+              schema: {
+                mixin: {default: ''},
+                num: {default: 50}
+              },
+
+              init: function () {
+                var data = this.data;
+
+                // 使用指定的mixin生成实体
+                for (var i = 0; i < data.num; i++) {
+                  var entity = document.createElement('a-entity');
+                  entity.setAttribute('mixin', data.mixin);
+                  this.el.appendChild(entity);
+                }
+              }
+            });
+        </script>
+    </head>
+    <body>
+        <a-scene>
+            <!--资源库-->
+            <a-assets>
+                <!--利用混合的方式定制模版-->
+                <a-mixin id="random" geometry="primitive: sphere ;radius:0.1" random-position>
+                </a-mixin>
+            </a-assets>
+            <!--生成实体-->
+            <a-entity entity-generator="mixin:random;num:50;"></a-entity>
+        </a-scene>
+    </body>
+</html>

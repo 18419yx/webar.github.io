@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/aframe.min.js"></script>
+		<script src="js/aframe-mouse-cursor-component.min.js"></script>
+		<script src="js/usingJS.js"></script>
+		<title>homepage</title>
+	</head>
+	<body>
+		<a-scene cursor="rayOrigin:mouse">
+			<a-assets>
+				<img id="Sechelt" src="img/sechelt.jpg" />
+				<img id="h1" src="img/h1.jpg" />
+				<img id="h2" src="img/h2.jpg" />
+				<img id="h3" src="img/h3.jpg" />
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+			</a-assets>
+			
+			<a-entity camera look-controls="enabled:false" wasd-controls="enabled:false"></a-entity>
+			
+			<a-entity>
+				<a-text 
+				value="Eight Planets In The Solar System" 
+				scale="4 4 4" 
+				font=exo2bold 
+				position="-6.5 3 -5" 
+				transparent="true"
+				opacity="0.8"
+				animation="property:object3D.position.y;to:3.15;dir:alternate;loop:true;dur:3000;easing:linear"></a-text>
+			</a-entity>
+			
+			<a-entity boder1 cursor-scale position="-3 -1 -5">
+				<!-- <a-text value="Model display" scale="1 1 1" font=exo2bold position="-0.7 1.2 0" transparent="true" opacity="0.8"></a-text> -->
+				<a-plane
+				id="p1"
+				width="2.1"
+				height="2.1">
+				</a-plane>
+				<a-plane
+				src="#h1"
+				width="2"
+				height="2">
+				</a-plane>
+			</a-entity>
+			
+			<a-entity boder2 cursor-scale position="0.2 -1 -5">
+				<!-- <a-text value="Knowledge learning" scale="1 1 1" font=exo2bold position="-1 1.2 0" transparent="true" opacity="0.8"></a-text> -->
+				<a-plane
+				id="p2"
+				width="2.1"
+				height="2.1">
+				</a-plane>
+				<a-plane
+				src="#h2"
+				width="2"
+				height="2">
+				</a-plane>
+			</a-entity>
+			
+			<a-entity boder3 cursor-scale position="3.5 -1 -5">
+				<!-- <a-text value="Test" scale="1 1 1" font=exo2bold position="-0.25 1.2 0" transparent="true" opacity="0.8"></a-text> -->
+				<a-plane
+				id="p3"
+				width="2.1"
+				height="2.1">
+				</a-plane>
+				<a-plane
+				src="#h3"
+				width="2"
+				height="2">
+				</a-plane>
+			</a-entity>
+			
+			<a-entity
+			animation="property:rotation;to:0 360 0;loop:true;dur:500000;easing:linear"
+			entity-generator="mixin:rand;num:2000;">
+			</a-entity>
+			   
+			<a-sky color="#000"></a-sky>
+		</a-scene>
+		
+	</body>
+</html>

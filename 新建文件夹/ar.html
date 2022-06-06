@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AR模式</title>
+	<script src="js/aframe.min.js"></script>
+    <script src="js/aframe-ar.js"></script>
+	<script src="js/usingJS.js"></script>
+	<script src="js/aframe-mouse-cursor-component.min.js"></script>
+	<style>
+		#b{
+			width: 60px;
+			height: 30px;
+			color: #fff;
+			position: absolute;
+			top: 1%;
+			left: 1%;
+		}
+		span{
+			color:#000;
+			size: 20px;
+		}
+	</style>
+	<script>
+		var but = document.querySelector("#b")
+		but.addEventListener("click", function() {
+			console.log(666)
+			window.open("main.html")
+			window.close()
+		})
+	</script>
+</head>
+<body style="margin: 0px;overflow: hidden;">
+    <!-- <a-scene physics>
+        <a-box position="0 0 0" rotation="0 45 0" color="#4CC3D9"></a-box>
+		<a-sky color="#ECECEC"></a-sky>
+    </a-scene> -->
+		<a-scene 
+		embedded 
+		vr-mode-ui="enabled: false;"
+		renderer="logarithmicDepthBuffer: true;"
+		arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+			<a-assets>
+				<img id="Sun" src="img/Sun.jpg" />
+				<img id="Earth" src="img/Earth.jpg" />
+				<img id="Moon" src="img/moon.jpg" />
+				<img id="Jupiter" src="img/Jupiter.jpg" />
+				<img id="Venus" src="img/Venus.jpg" />
+				<img id="Mars" src="img/Mars.jpg" />
+				<img id="Mercury" src="img/Mercury.jpg" />
+				<img id="Saturn" src="img/Saturn.png" />
+				<img id="Uranus" src="img/Uranus.jpg" />
+				<img id="Neptune" src="img/Neptune.jpg" />
+				<video id="myvideo" src="video/solar%20system.mp4"></video>
+				<!-- <audio src="./img/1.mp3" autoplay="autoplay" preload="auto" loop="loop"></audio> -->
+				<a-mixin id="random" geometry="primitive: sphere ;radius:0.04" material="color:#ffffff" random-position></a-mixin>
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+			</a-assets>
+			    <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
+<a-entity scale="0.05 0.05 0.05">
+	<a-entity >
+		<a-sphere cursor-scale id="sun" position="0 0 0" src="#Sun" radius="4" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear"></a-sphere>
+	</a-entity>
+	<!-- <a-text id="text-sun" value="sun" color="#fff" scale="5 5 5" position="-0.9 5.5 0" font="mozillavr" visible="false"></a-text> -->
+		
+	<!-- 水星 -->
+	<a-ring color="white" rotation="-90 0 0" radius-inner="4.99" radius-outer="5.01"></a-ring>
+	<a-entity position="4.33 0 2.5" pivot="-4.33 0 -2.55" animation="property:rotation;to:0 360 0;loop:true;dur:15000;easing:linear">
+		<a-sphere cursor-scale id="mercury" src="#Mercury" radius="0.5" animation="property:rotation;to:0 360 0;loop:true;dur:10000;easing:linear"></a-sphere>
+	</a-entity>
+	
+	<!-- 金星 -->
+	<a-ring color="white" rotation="-90 0 0" radius-inner="8.99" radius-outer="9.01"></a-ring>
+	<a-entity position="9 0 0" pivot="-9 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+		<a-sphere cursor-scale id="venus" src="#Venus" radius="1" animation="property:rotation;to:0 -360 0;loop:true;dur:10000;easing:linear"></a-sphere>
+	</a-entity>
+	
+	<!-- 地球 -->
+	<a-ring color="white" rotation="-90 0 0" radius-inner="12.99" radius-outer="13.01"></a-ring>
+	<a-entity position="9.19 0 9.19" pivot="-9.19 0 -9.19" animation="property:rotation;to:0 360 0;loop:true;dur:25000;easing:linear">
+		<a-sphere cursor-scale id="earth" src="#Earth" radius="1.1" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+	       <a-entity position="3 0 0" pivot="-3 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:10000;easing:linear">
+			   <a-sphere id="moon" src="#Moon" radius="0.4" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear">
+			   </a-sphere>
+		   </a-entity>
+		</a-sphere>
+	</a-entity>
+	
+	<!-- pivot属性控制公转，以实体本身坐标确定旋转点 -->
+	<!-- <a-entity id="sphere" geometry="primitive:sphere" material="color:black" position="0 5 0"></a-entity> -->
+	<!-- 火星 -->
+	<a-ring color="white" rotation="-90 0 0" radius-inner="16.99" radius-outer="17.01"></a-ring>
+	<a-entity position="-17 0 0" pivot="17 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:30000;easing:linear">
+		<a-sphere cursor-scale id="mars" src="#Mars" radius="0.8" animation="property:rotation;to:0 360 0;loop:true;dur:10000;easing:linear"></a-sphere>
+	</a-entity>
+	
+	<!-- 木星 -->
+	<a-ring color="white" rotation="-90 0 0" radius-inner="20.99" radius-outer="21.01"></a-ring>
+	<a-entity position="0 0 21" pivot="0 0 -21" animation="property:rotation;to:0 360 0;loop:true;dur:35000;easing:linear">
+		<a-sphere cursor-scale id="jupiter" src="#Jupiter" radius="1.8" animation="property:rotation;to:0 360 0;loop:true;dur:15000;easing:linear"></a-sphere>
+	</a-entity>
+	
+	<!-- 土星 -->
+	<a-ring color="white" rotation="-90 0 0" radius-inner="24.99" radius-outer="25.01"></a-ring>
+	<a-entity position="0 0 -25" pivot="0 0 25" animation="property:rotation;to:0 360 0;loop:true;dur:40000;easing:linear">
+		<a-sphere cursor-scale id="saturn" src="#Saturn" radius="1.4" animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear"><a-ring src="#Saturn" radius-inner="2.0" radius-outer="2.3" rotation="-60 0 0"></a-ring></a-sphere>
+	</a-entity>
+	
+	<!-- 天王星 -->
+	<a-ring color="white" rotation="-90 0 0" radius-inner="28.99" radius-outer="29.01"></a-ring>
+	<a-entity position="29 0 0" pivot="-29 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:70000;easing:linear">
+		<a-sphere cursor-scale id="uranus" src="#Uranus" radius="1" animation="property:rotation;to:0 360 0;loop:true;dur:25000;easing:linear"></a-sphere>
+	</a-entity>
+	
+	<!-- 海王星 -->
+	<a-ring color="white" rotation="-90 0 0" radius-inner="32.99" radius-outer="33.01"></a-ring>
+	<a-entity position="-33 0 0" pivot="33 0 0" animation="property:rotation;to:0 360 0;loop:true;dur:100000;easing:linear">
+		<a-sphere cursor-scale id="neptune" src="#Neptune" radius="1" animation="property:rotation;to:0 360 0;loop:true;dur:30000;easing:linear"></a-sphere>
+	</a-entity>
+	
+	<a-entity
+	animation="property:rotation;to:0 360 0;loop:true;dur:40000;easing:linear"
+	entity-generator="mixin:random;num:200;">
+	</a-entity>
+	
+	<a-entity
+	animation="property:rotation;to:0 360 0;loop:true;dur:500000;easing:linear"
+	entity-generator="mixin:rand;num:2000;">
+	</a-entity>
+</a-entity>
+			    <!-- define a camera which will move according to the marker position -->
+		<a-marker-camera preset='hiro'></a-marker-camera>
+		</a-scene>
+		
+		<div>
+			<button id="b">
+				<span>返回</span>
+			</button>
+		</div>
+		
+</body>
+</html>
