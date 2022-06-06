@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+  <title>火星</title>
+  <script src="../js/aframe.min.js"></script>
+  <script src="../js/aframe-mouse-cursor-component.min.js"></script>
+  <script src="../js/usingJS.js"></script>
+</head>
+
+<body>
+  <a-scene cursor="rayOrigin:mouse">
+	  <a-assets>
+		  <img id="Mars" src="../img/Mars.jpg" />
+		  <img id="mp" src="../picture/mars/mp.jpg" />
+		  <img id="m1" src="../picture/mars/m1.png"/>
+		  <img id="m2" src="../picture/mars/m2.jpg" />
+		  <img id="m3" src="../picture/mars/m3.jpeg" />
+		  <img id="m4" src="../picture/mars/m4.jpg" />
+		  <img id="m5" src="../picture/mars/m5.jpeg" />
+		  <a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+		  <video id="myvideo" src="../video/mars.mp4"></video>
+	  </a-assets>
+	<a-entity>
+		<a-camera position="0 0 0">
+			<a-entity>
+				<a-text scalerr id="back" value="Back" position="-14 6 -10" scale="4 4 4" font="exo2bold" animation="property:object3D.position.y;to:6.15;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+			</a-entity>
+			<a-entity>
+				<a-text scalerr id="home" value="Home" position="-14 7.5 -10" scale="4 4 4" font=exo2bold animation="property:object3D.position.y;to:7.65;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+			</a-entity>
+		</a-camera>
+	</a-entity>
+	
+	<a-entity showmove position="0 0 -10" animation="property:position;to:-8 0 -10;dur:1500;easing:linear;autoplay:false">
+		<a-sphere
+		    id="s"
+		    src="#Mars" 
+			radius="3" 
+			animation="property:rotation;to:0 360 0;loop:true;dur:20000;easing:linear"
+			>
+		</a-sphere>
+	</a-entity>
+	
+	<a-entity id="pll" position="-0.4 6 -10" visible="false">
+		    <a-text id="vi" scaler value="Video←" position="-1 1 0" scale="3 3 3" font=exo2bold></a-text>
+			<a-text id="pi" scaler value="Picture" position="5 1 0" scale="3 3 3" font=exo2bold></a-text>
+			<a-text id="de" scaler value="Text" position="12 1 0" scale="3 3 3" font=exo2bold></a-text>
+	</a-entity>
+	
+<!-- 	<a-entity id="pl" position="-10 2 -50" rotation="0 0 0" visible="false" animation="property:position;to:-4.4 2 -10;dur:1500;autoplay:false">
+		<a-text value="Name:Mars" position="0 1 0" scale="3 3 3" font=exo2bold animation="property:object3D.position.y;to:1.15;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+		<a-text value="Radius:3398km" position="0 -1 0" scale="3 3 3" font=exo2bold animation="property:object3D.position.y;to:-0.95;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+		<a-text value="Rotation:From West To East" position="0 -3 0" scale="3 3 3" font=exo2bold animation="property:object3D.position.y;to:-2.95;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+		<a-text value="Revolution:From West To East" position="0 -5 0" scale="3 3 3" font=exo2bold animation="property:object3D.position.y;to:-4.95;dir:alternate;loop:true;dur:1000;easing:linear"></a-text>
+	</a-entity>	 -->
+	
+	<a-entity
+	animation="property:rotation;to:0 360 0;loop:true;dur:1000000;easing:linear"
+	entity-generator="mixin:rand;num:2000;">
+	</a-entity>
+	
+	<a-entity showpicture position="50 10 -50" rotation="0 0 0" animation="property:position;to:10 0 -10;dur:1500;autoplay:false" visible="false">
+		<a-plane src="#mp" width="9" height="5" transparent="true" opacity="0.8"> 
+		</a-plane>
+		<a-plane id="sign1" width="2" height="1.5" position="3.1 0.3 0" visible="false"></a-plane>
+		<a-plane id="sign2" width="2.8" height="1" position="-2 -1.7 0" visible="false"></a-plane>
+		<a-plane id="sign3" width="2.1" height="1.1" position="2.4 -1.5 0" visible="false"></a-plane>
+		<a-plane id="sign4" width="1" height="1" position="-3.2 0.2 0" visible="false"></a-plane>
+		<a-plane id="sign5" width="1.5" height="1.5" position="0 0 0" visible="false"></a-plane>
+	</a-entity>
+	
+	<a-entity position="10 3 -2" rotation="0 -90 0" scale="1.8 1.8 1.8">
+		<a-plane id="mm1" src="#m1" width="8" height="5" position="3 -1 0" visible="false"></a-plane>
+		<a-plane id="mm2" src="#m2" width="10" height="4" position="3 -1 0" visible="false"></a-plane>
+		<a-plane id="mm3" src="#m3" width="9" height="5" position="3 -1 0" visible="false"></a-plane>
+		<a-plane id="mm4" src="#m4" width="6" height="6" position="3 -1 0" visible="false"></a-plane>
+		<a-plane id="mm5" src="#m5" width="6" height="6" position="3 -1 0" visible="false"></a-plane>
+	</a-entity>
+	
+	<a-video videohandler 
+	src="#myvideo" 
+	width="9" height="4.5" 
+	position="0 -12 -10" 
+	transparent="true" opacity="0.7" 
+	visible="false"
+	animation="property:position;to:0 0 -10;dur:1500;easing:linear;autoplay:false">
+	</a-video>
+	<a-sky color="#000"></a-sky>
+  </a-scene>
+</body>
+</html>

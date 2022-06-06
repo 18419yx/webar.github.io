@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>saturn-text</title>
+		<script src="../js/aframe.min.0.5.0.js"></script>
+		<script src="../js/aframe-html-shader.min.js"></script>
+		<script src="../js/usingJS.js"></script>
+		<script src="../js/new.js"></script>
+		<style>
+			span{
+				color: #ff5500;;
+			}
+		</style>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<img id="Saturn" src="../img/Saturn.png" />
+				<img id="mp" src="../picture/mars/mp.jpg" />
+				<img id="m1" src="../picture/saturn/s1.jpg"/>
+				<img id="m2" src="../picture/saturn/s2.jpg" />
+				<img id="m3" src="../picture/saturn/s3.jpeg" />
+				<img id="m4" src="../picture/saturn/s4.jpg" />
+				<img id="m5" src="../picture/saturn/s5.jpg" />
+				<video id="myvideo" src="../video/saturn.mp4"></video>
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+			</a-assets>
+			<a-entity>
+				<a-camera position="0 1.6 10">
+					<a-cursor color="#fff"></a-cursor>
+					
+					<a-entity visible="false" jbcs>
+						<a-plane material="shader: html; target: #h11; ratio: height; transparent: true; side: double" position="-1 0 -1" scale="0.47 0.47 0.47"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" mcly>
+						<a-plane material="shader: html; target: #h22; ratio: height; transparent: true; side: double" position="0 0.7 -1" scale="0.15 0.15 0.15"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" tcls>
+						<a-plane material="shader: html; target: #h33; ratio: height; transparent: true; side: double" position="0.8 0.3 -1" scale="0.42 0.42 0.42"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" bmdx>
+						<a-plane material="shader: html; target: #h44; ratio: height; transparent: true; side: double" position="0.78 -0.3 -1" scale="0.42 0.42 0.42"></a-plane>
+					</a-entity>
+					
+				</a-camera>
+			</a-entity>
+			
+			<!-- 标记板块 -->
+			<a-entity id="total">
+				<a-entity jiechu id="jiben" position="0 0 3.2" rotation="-15 0 0">
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h1; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="minchen" position="2.6 0 1.6" rotation="-15 60 0">
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h2; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tance" position="2.6 0 -1.6" rotation="-15 120 0">
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h3; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="biaomian" position="0 0 -3.2" rotation="-15 180 0">
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h4; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="shipin" position="-2.6 0 -1.6" rotation="-15 -120 0">
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h5; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tupian" position="-2.6 0 1.6" rotation="-15 -60 0">
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h6; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d0c39d" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-animation
+				attribute="rotation"
+				to="0 360 0"
+				dur="15000"
+				easing="linear"
+				begin="start"
+				end="stop"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 图片信息 -->
+			<a-entity id="pict" visible="false" seetu>
+				<a-plane id="mm1" src="#m1" 
+				 width="8" height="5" position="0 0 0" rotation="10 0 0" scale="1.1 1.1 1.1">
+				 <a-animation
+				 attribute="position"
+				 to="0 7 0"
+				 dur="800"
+				 easing="linear"
+				 repeat="0"
+				 begin="fade">
+				 </a-animation>
+				</a-plane>
+				<a-plane id="mm2" src="#m2" 
+				width="10" height="4" position="0 0 0" rotation="10 30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="-14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+			    </a-plane>
+				<a-plane id="mm3" src="#m3" 
+				width="9" height="5" position="0 0 0" rotation="10 -30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm4" src="#m4" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="-8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm5" src="#m5" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+			</a-entity>
+			
+			<a-entity cursor-scale id="back" position="0 -5 0">
+				<a-plane
+				width="2" height="0.8" color="#d0c39d" position="0 0 0"
+				transparent="true" opacity="0.5">
+				<a-plane material="shader: html; target: #hback; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.5 0.5 0.5"></a-plane>
+				</a-plane>
+				<a-plane
+				width="2" height="0.8" color="#d0c39d" position="0 0 -0.015" rotation="0 180 0"
+				transparent="true" opacity="0.5">
+				</a-plane>
+			</a-entity>
+			
+			<a-entity position="0 0 0">
+				<a-sphere
+				    id="s" qiehuan
+				    src="#Saturn" 
+					radius="1">
+					<a-entity rotation="-60 0 0">
+						<a-ring src="#Saturn" radius-inner="1.6" radius-outer="1.9"></a-ring>
+						<a-ring src="#Saturn" radius-inner="1.6" radius-outer="1.9" rotation="180 0 0"></a-ring>
+					</a-entity>
+				</a-sphere>
+				<a-animation
+				attribute="rotation"
+				to="0 360 0"
+				dur="40000"
+				easing="linear"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<a-entity entity-generator="mixin:rand;num:1000;">
+				<a-animation 
+				attribute="rotation"
+				to="0 360 0"
+				dur="1000000"
+				easing="linear"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 视频信息 -->
+			<a-video shiping
+			src="#myvideo" 
+			width="8" height="4" 
+			position="5 5 0"
+			visible="false"
+			transparent="true" opacity="0.7">
+			</a-video>
+			
+			<a-sky color="#000"></a-sky>
+		</a-scene>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="hback" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">返回</div>
+			<div id="h1" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">基本参数</div>
+			<div id="h2" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">名称来源</div>
+			<div id="h3" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">探测历史</div>
+			<div id="h4" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">性质与光环</div>
+			<div id="h5" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">视频介绍</div>
+			<div id="h6" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">图片介绍</div>
+			<div id="h11" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				公转轨道:距太阳1429400000km(9.54天文单位)<br /><br />
+				行星半径:60268km(赤道)<br /><br />
+				质量:5.68×10^26kg<br /><br />
+				卫星数:83颗(超越木星成为卫星最多的行星)<br /><br />
+				自转方向:自西向东<br /><br />
+			</div>
+			<div id="h22" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;在罗马神话中，<span>土星</span>（Saturn）“萨图尔努斯”是农神的名称。
+				希腊神话中的农神Cronus是Uranus（天王星）和盖亚的儿子，也是宙斯（木星）的父亲。土
+				星也是英语中“星期六”（Saturday）的词根。
+			</div>
+			<div id="h33" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;<span>发现</span>：土星在史前就被发现了。伽利略在1610年第一次通过望远镜观察到它，并记录下它的奇怪运行轨迹，但也被它给搞糊涂了。早期对于土星的观察十分复杂，这是由于当土星在它的轨道上时每过几年，地球就要穿过土星光环所在的平面（低分辨率的土星图片所以经常有彻底性的变化），直到1659年惠更斯正确地推断出光环的几何形状。在1977年以前，土星的光环一直被认为是太阳系中独有存在的；但在1977年，在天王星周围发现了暗淡的光环，在这以后不久木星和海王星周围也发现了光环。<br />
+				&nbsp;&nbsp;<span>访问</span>：先锋11号在1979年首先去过土星周围，同年又被旅行家1号和2号访问。卡西尼飞行器也在2004年到达土星。
+			</div>
+			<div id="h44" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;通过小型的望远镜观察也能明显地发现<span>土星是一个扁球体</span>土星是一个扁球体。它赤道的直径比两极的直径大大约10%（赤道为120536千米，两极为108728千米），这是它快速的自转和流质地表的结果。其他的气态行星也是扁球体，不过没有这样明显。<br />
+				&nbsp;&nbsp;从地球上可以看到<span>两个明显的光环</span>两个明显的光环（A和B）和<span>一个暗淡的光环</span>一个暗淡的光环（C），在A光环与B光环之间的间隙被称为“卡西尼部分”。一个在A光环的外围部分更为暗淡的间隙被称为“Encke Gap”（但这有点用词不当，因为它可能从没被Encke看见过）。旅行者号发送回的图片显示还有四个暗淡的光环。土星的光环与其他星的光环不同，它是非常明亮的。
+			</div>
+		</div>
+		
+		<script>
+			document.querySelector("#back").addEventListener("click", function() {
+				window.open("../learn.html")
+				window.close()
+			})
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>mercury-text</title>
+		<script src="../js/aframe.min.0.5.0.js"></script>
+		<script src="../js/aframe-html-shader.min.js"></script>
+		<script src="../js/usingJS.js"></script>
+		<script src="../js/new.js"></script>
+		<style>
+			span{
+				color: #ff5500;;
+			}
+		</style>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<img id="Mercury" src="../img/Mercury.jpg" />
+				<img id="mp" src="../picture/mars/mp.jpg" />
+				<img id="m1" src="../picture/mercury/mer1.jpg"/>
+				<img id="m2" src="../picture/mercury/mer2.jpg" />
+				<img id="m3" src="../picture/mercury/mer3.jpg" />
+				<img id="m4" src="../picture/mercury/mer4.jpg" />
+				<img id="m5" src="../picture/mercury/mer5.jpg" />
+				<video id="myvideo" src="../video/mercury.mp4"></video>
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+			</a-assets>
+			<a-entity>
+				<a-camera position="0 1.6 10">
+					<a-cursor color="#fff"></a-cursor>
+					
+					<a-entity visible="false" jbcs>
+						<a-plane material="shader: html; target: #h11; ratio: height; transparent: true; side: double" position="-1 0 -1" scale="0.94 0.94 0.94"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" mcly>
+						<a-plane material="shader: html; target: #h22; ratio: height; transparent: true; side: double" position="0 0.7 -1" scale="0.14 0.14 0.14"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" tcls>
+						<a-plane material="shader: html; target: #h33; ratio: height; transparent: true; side: double" position="0.8 0.3 -1" scale="0.34 0.34 0.34"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" bmdx>
+						<a-plane material="shader: html; target: #h44; ratio: height; transparent: true; side: double" position="0.8 -0.3 -1" scale="0.39 0.39 0.39"></a-plane>
+					</a-entity>
+					
+				</a-camera>
+			</a-entity>
+			
+			<!-- 标记板块 -->
+			<a-entity id="total">
+				<a-entity jiechu id="jiben" position="0 0 3.2" rotation="-15 0 0">
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h1; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="minchen" position="2.6 0 1.6" rotation="-15 60 0">
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h2; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tance" position="2.6 0 -1.6" rotation="-15 120 0">
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h3; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="biaomian" position="0 0 -3.2" rotation="-15 180 0">
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h4; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="shipin" position="-2.6 0 -1.6" rotation="-15 -120 0">
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h5; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tupian" position="-2.6 0 1.6" rotation="-15 -60 0">
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h6; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#9891b7" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-animation
+				attribute="rotation"
+				to="0 360 0"
+				dur="15000"
+				easing="linear"
+				begin="start"
+				end="stop"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 图片信息 -->
+			<a-entity id="pict" visible="false" seetu>
+				<a-plane id="mm1" src="#m1" 
+				 width="8" height="5" position="0 0 0" rotation="10 0 0" scale="1.1 1.1 1.1">
+				 <a-animation
+				 attribute="position"
+				 to="0 7 0"
+				 dur="800"
+				 easing="linear"
+				 repeat="0"
+				 begin="fade">
+				 </a-animation>
+				</a-plane>
+				<a-plane id="mm2" src="#m2" 
+				width="10" height="4" position="0 0 0" rotation="10 30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="-14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+			    </a-plane>
+				<a-plane id="mm3" src="#m3" 
+				width="9" height="5" position="0 0 0" rotation="10 -30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm4" src="#m4" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="-8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm5" src="#m5" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+			</a-entity>
+			
+			<a-entity cursor-scale id="back" position="0 -5 0">
+				<a-plane
+				width="2" height="0.8" color="#9891b7" position="0 0 0"
+				transparent="true" opacity="0.5">
+				<a-plane material="shader: html; target: #hback; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.5 0.5 0.5"></a-plane>
+				</a-plane>
+				<a-plane
+				width="2" height="0.8" color="#9891b7" position="0 0 -0.015" rotation="0 180 0"
+				transparent="true" opacity="0.5">
+				</a-plane>
+			</a-entity>
+			
+			<a-entity position="0 0 0">
+				<a-sphere
+				    id="s" qiehuan
+				    src="#Mercury" 
+					radius="2">
+					<a-animation
+					attribute="rotation"
+					to="0 360 0"
+					dur="40000"
+					easing="linear"
+					repeat="indefinite">
+					</a-animation>
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity entity-generator="mixin:rand;num:1000;">
+				<a-animation 
+				attribute="rotation"
+				to="0 360 0"
+				dur="1000000"
+				easing="linear"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 视频信息 -->
+			<a-video shiping
+			src="#myvideo" 
+			width="8" height="4" 
+			position="5 5 0"
+			visible="false"
+			transparent="true" opacity="0.7">
+			</a-video>
+			
+			<a-sky color="#000"></a-sky>
+		</a-scene>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="hback" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">返回</div>
+			<div id="h1" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">基本参数</div>
+			<div id="h2" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">名称来源</div>
+			<div id="h3" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">探测历史</div>
+			<div id="h4" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">表面地貌</div>
+			<div id="h5" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">视频介绍</div>
+			<div id="h6" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">图片介绍</div>
+			<div id="h11" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				半长轴:5791万千米(0.38天文单位)<br /><br />
+				轨道偏心率:0.206<br /><br />
+				轨道倾角:7.0°<br /><br />
+				平均轨道运行速度:47.89km/s<br /><br />
+				行星半径:2440km(赤道)<br /><br />
+				质量:(地球质量=1):0.0553<br /><br />
+				密度:5.43克/立方厘米<br /><br />
+				卫星数:无(现依旧没发现)<br /><br />
+				自转周期:58.653485d<br /><br />
+				自转方向:自西向东<br /><br />
+				公转周期:87.70日
+			</div>
+			<div id="h22" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;<span>水星</span>，在古罗马神话中Mercury是商业、旅行和偷窃之神，
+				即古希腊神话中的赫耳墨斯，为众神传信的神，或许由于水星在空中移动得快，才使它得到这个名字。
+			</div>
+			<div id="h33" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;<span>发现</span>：早在公元前3000年的苏美尔时代，人们便发现了水星，古希腊人赋于它两个名字：当它初现于清晨时称为阿波罗，当它闪烁于夜空时称为赫耳墨斯。不过，古希腊天文学家们知道这两个名字实际上指的是同一颗星星，赫拉克赖脱（公元前5世纪之希腊哲学家）甚至认为水星与金星并非环绕地球，而是环绕着太阳在运行。<br />
+				&nbsp;&nbsp;<span>访问</span>：现仅有水手10号探测器于1973年和1974年三次造访水星。它仅仅勘测了水星表面的45%（并且很不幸运，由于水星太靠近太阳，以致于哈勃望远镜无法对它进行安全的摄像）。
+			</div>
+			<div id="h44" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;水星的表面表现出巨大的急斜面，有些达到几百千米长，三千米高。有些横处于环形山的外环处，而另一些急斜面的面貌表明他们是受压缩而形成的。据估计，水星表面收缩了大约0.1%（或在星球半径上递减了大约1千米）。<br />
+				&nbsp;&nbsp;水星上最大的地貌特征之一是Caloris盆地，直径约为1300千米，人们认为它与月球上最大的盆地Maria相似。如同月球的盆地，Caloris盆地很有可能形成于太阳系早期的大碰撞中，那次碰撞大概同时造成了星球另一面正对盆地处奇特的地形。<br />
+				&nbsp;&nbsp;除了布满陨石坑的地形，水星也有相对平坦的平原，有些也许是古代火山运动的结果，但另一些大概是陨石所形成的喷出物沉积的结果。
+			</div>
+		</div>
+		
+		<script>
+			document.querySelector("#back").addEventListener("click", function() {
+				window.open("../learn.html")
+				window.close()
+			})
+		</script>
+		
+	</body>
+</html>

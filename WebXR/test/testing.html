@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>知识回顾</title>
+		<!-- <script src="js/aframe.min.js"></script> -->
+		<script src="../js/aframe.min.0.5.0.js"></script>
+		<!-- <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script> -->
+		<script src="../js/aframe-html-shader.min.js"></script>
+		<!-- <script src="../js/event.js"></script> -->
+		<script src="../js/usingJS.js"></script>
+		<script src="../js/test.js"></script>
+		<style>
+			span{
+				color:#ff5500;
+			}
+		</style>
+	</head>
+	<body>
+		<a-scene xuanti>
+		<a-entity><a-camera><a-cursor scale="0.5 0.5 0.5" color="#fff"></a-cursor></a-camera></a-entity>
+		<a-assets>
+			<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+		</a-assets>
+		
+		<a-entity position="0 8 -10" rotation="30 0 0">
+			<a-entity id="ques1" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="-2.4 0 0"><a-text value="1" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques2" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="-1.2 0 0"><a-text value="2" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques3" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 0"><a-text value="3" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques4" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="1.2 0 0"><a-text value="4" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques5" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="2.4 0 0"><a-text value="5" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques6" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="-2.4 -1.2 0"><a-text value="6" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques7" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="-1.2 -1.2 0"><a-text value="7" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques8" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 -1.2 0"><a-text value="8" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques9" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="1.2 -1.2 0"><a-text value="9" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="ques10" buttoncontrols geometry="primitive:plane;width:1.2;height:1.2" material="color:#bdbdbd;transparent:true;opacity:0.2" position="2.4 -1.2 0"><a-text value="10" font="exo2bold" scale="2 2 2" position="-0.1 0.1 0"></a-text></a-entity>
+			<a-entity id="home" buttoncontrols geometry="primitive:plane;width:1.6;height:0.8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="-8 -1.2 0"><a-text value="home" font="exo2bold" scale="2 2 2" position="-0.5 0.1 0"></a-text></a-entity>
+		</a-entity>
+			<!-- <a-box id="box" color="#fff" position="0 0 -10"></a-box> -->
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade1"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h1; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h2; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h3; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba" buttoncontrols width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb" buttoncontrols width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc" buttoncontrols width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd" buttoncontrols width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h4; ratio: height; transparent: true; side: double" position="0 0 0" scale="4 4 4"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h5; ratio: height; transparent: true; side: double" position="0 0 0" scale="4 4 4"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade2"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h21; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h22; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h23; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba2" buttoncontrols2 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb2" buttoncontrols2 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc2" buttoncontrols2 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd2" buttoncontrols2 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr2" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h24; ratio: height; transparent: true; side: double" position="0 0 0" scale="5 5 5"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa2" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h25; ratio: height; transparent: true; side: double" position="0 0 0" scale="5 5 5"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade3"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h31; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h32; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h33; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba3" buttoncontrols3 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb3" buttoncontrols3 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc3" buttoncontrols3 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd3" buttoncontrols3 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr3" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h34; ratio: height; transparent: true; side: double" position="0.6 0 0" scale="4 4 4"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa3" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h35; ratio: height; transparent: true; side: double" position="0.6 0 0" scale="4 4 4"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade4"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h41; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h42; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h43; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba4" buttoncontrols4 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb4" buttoncontrols4 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc4" buttoncontrols4 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd4" buttoncontrols4 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr4" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h44; ratio: height; transparent: true; side: double" position="0.5 0 0" scale="5 5 5"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa4" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h45; ratio: height; transparent: true; side: double" position="0.5 0 0" scale="5 5 5"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade5"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h51; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h52; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h53; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba5" buttoncontrols5 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb5" buttoncontrols5 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc5" buttoncontrols5 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd5" buttoncontrols5 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr5" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h54; ratio: height; transparent: true; side: double" position="0.6 0 0" scale="2 2 2 "></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa5" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h55; ratio: height; transparent: true; side: double" position="0.6 0 0" scale="2 2 2"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade6"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h61; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h62; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h63; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba6" buttoncontrols6 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb6" buttoncontrols6 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc6" buttoncontrols6 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd6" buttoncontrols6 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr6" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h64; ratio: height; transparent: true; side: double" position="0.9 0 0" scale="2 2 2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa6" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h65; ratio: height; transparent: true; side: double" position="0.9 0 0" scale="2 2 2"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade7"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h71; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h72; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h73; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba7" buttoncontrols7 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb7" buttoncontrols7 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc7" buttoncontrols7 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd7" buttoncontrols7 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr7" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h74; ratio: height; transparent: true; side: double" position="0 0 0" scale="3 3 3"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa7" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h75; ratio: height; transparent: true; side: double" position="0 0 0" scale="3 3 3"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade8"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h81; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h82; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h83; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba8" buttoncontrols8 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb8" buttoncontrols8 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc8" buttoncontrols8 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd8" buttoncontrols8 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr8" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h84; ratio: height; transparent: true; side: double" position="0 0 0" scale="2.2 2.2 2.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa8" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h85; ratio: height; transparent: true; side: double" position="0 0 0" scale="2.2 2.2 2.2"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade9"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h91; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h92; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h93; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba9" buttoncontrols9 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb9" buttoncontrols9 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc9" buttoncontrols9 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd9" buttoncontrols9 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr9" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h94; ratio: height; transparent: true; side: double" position="0 0 0" scale="2.5 2.5 2.5"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa9" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h95; ratio: height; transparent: true; side: double" position="0 0 0" scale="2.5 2.5 2.5"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+			<a-entity class="question" position="-20 0 0" visible="false">
+				<a-animation 
+				attribute="position"
+				to="0 0 0"
+				dur="1000"
+				begin="fade10"
+				easing="linear">
+				</a-animation>
+				<a-entity geometry="primitive:plane;width:12;height:8" material="color:#bdbdbd;transparent:true;opacity:0.2" position="0 0 -10">
+					<a-plane material="shader: html; target: #h101; ratio: height; transparent: true; side: double" position="0 3.5 -0.01" scale="0.7 0.7 0.7"></a-plane>
+					<a-plane material="shader: html; target: #h102; ratio: height; transparent: true; side: double" position="0 2 -0.01" scale="0.6 0.6 0.6"></a-plane>
+					<a-plane material="shader: html; target: #h103; ratio: height; transparent: true; side: double" position="-2.5 -1 -0.01" scale="3.5 3.5 3.5"></a-plane>
+					<a-plane id="ba10" buttoncontrols10 width="4" height="0.8" position="-1.5 0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bb10" buttoncontrols10 width="4" height="0.8" position="-1.5 -0.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bc10" buttoncontrols10 width="4" height="0.8" position="-1.5 -1.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+					<a-plane id="bd10" buttoncontrols10 width="4" height="0.8" position="-1.5 -2.5 0.02" color="#bdbdbd" transparent="true" opacity="0.2"></a-plane>
+				</a-entity>
+				
+				<a-entity id="tr10" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h104; ratio: height; transparent: true; side: double" position="0.5 0 0" scale="3 3 3"></a-plane>
+				</a-entity>
+				
+				<a-entity id="fa10" position="10 0 -10" visible="false">
+					<a-plane material="shader: html; target: #h105; ratio: height; transparent: true; side: double" position="0.5 0 0" scale="3 3 3"></a-plane>
+				</a-entity>
+			</a-entity>
+			
+<!-- 			<a-entity>
+				<a-plane material="shader: html; target: #hhh; ratio: height; transparent: true; side: double" position="9 5 -10" scale="1.5 1.5 1.5"></a-plane>
+			</a-entity> -->
+		
+		<a-entity entity-generator="mixin:rand;num:2000;">
+			<a-animation 
+			attribute="rotation"
+			to="0 360 0"
+			dur="1000000"
+			easing="linear"
+			repeat="indefinite">
+			</a-animation>
+		</a-entity>
+		
+			<a-sky color="#000"></a-sky>
+		</a-scene>
+
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="hhome" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">主界面</div>
+			<div id="h1" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第一题</div>
+			<div id="h2" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">八大行星中最小的行星是___</div>
+			<div id="h3" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：水星<br /><br />
+			    B：金星<br /><br />
+			    C：地球<br /><br />
+			    D：海王星<br /></div>
+			<div id="h4" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>A</span><br /><br />
+				注释：太阳系八大行星按从小到大顺<br /><br />序排列依次为
+				水星、火星、金星、地球<br /><br />、海王星、天王星、土星、木星。
+			</div>
+			<div id="h5" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>A</span><br /><br />
+				注释：太阳系八大行星按从小到大顺<br /><br />序排列依次为
+				水星、火星、金星、地球<br /><br />、海王星、天王星、土星、木星。
+			</div>
+<!-- 			<div id="hhh" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    正确率：80%<br /><br />
+			</div> -->
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h21" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第二题</div>
+			<div id="h22" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">八大行星中有"五最"称号的行星是___</div>
+			<div id="h23" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：火星<br /><br />
+			    B：水星<br /><br />
+			    C：天王星<br /><br />
+			    D：海王星<br /></div>
+			<div id="h24" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>B</span><br /><br />
+				注释：水星占据了太阳系五之"最"，分别<br /><br />是体积最小、
+				离太阳最近、昼夜温差最大<br /><br />(近600℃)、卫星最少(没有卫星)、轨道<br /><br />速度最快。
+			</div>
+			<div id="h25" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>B</span><br /><br />
+				注释：水星占据了太阳系五之"最"，分别<br /><br />是体积最小、
+				离太阳最近、昼夜温差最大<br /><br />(近600℃)、卫星最少(没有卫星)、轨道<br /><br />速度最快。
+			</div>
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h31" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第三题</div>
+			<div id="h32" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">八大行星中最大的行星是___</div>
+			<div id="h33" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：土星<br /><br />
+			    B：木星<br /><br />
+			    C：天王星<br /><br />
+			    D：海王星<br /></div>
+			<div id="h34" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>B</span><br /><br />
+				注释：木星是太阳系行星中质量最大的一颗，<br /><br />由于它巨大的体积，
+				人们不用望远镜就可以看<br /><br />到它，木星也被称为“太阳系行星之王”。
+			</div>
+			<div id="h35" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>B</span><br /><br />
+				注释：木星是太阳系行星中质量最大的一颗，<br /><br />由于它巨大的体积，
+				人们不用望远镜就可以看<br /><br />到它，木星也被称为“太阳系行星之王”。
+			</div>
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h41" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第四题</div>
+			<div id="h42" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">哪个行星被称为是笔下发现的行星___</div>
+			<div id="h43" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：水星<br /><br />
+			    B：金星<br /><br />
+			    C：天王星<br /><br />
+			    D：海王星<br /></div>
+			<div id="h44" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>D</span><br /><br />
+				注释：海王星是一个人们通过公式推算发现的行星，<br />
+				而并非有目的的观测。在天王星被发现后，人们注意<br />
+				到它的轨道与根据牛顿理论所推知的并不一致。因此<br />
+				科学家们预测存在着另一颗遥远的行星从而影响了天<br />
+				王星的轨道。Galle和d'Arrest在1846年9月23日首<br />
+				次观察到海王星，它出现的地点非常靠近于亚当斯和<br />
+				勒威耶根据所观察到的木星、土星和天王星的位置经<br />
+				过计算独立预测出的地点。
+			</div>
+			<div id="h45" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>D</span><br /><br />
+				注释：海王星是一个人们通过公式推算发现的行星，<br />
+				而并非有目的的观测。在天王星被发现后，人们注意<br />
+				到它的轨道与根据牛顿理论所推知的并不一致。因此<br />
+				科学家们预测存在着另一颗遥远的行星从而影响了天<br />
+				王星的轨道。Galle和d'Arrest在1846年9月23日首<br />
+				次观察到海王星，它出现的地点非常靠近于亚当斯和<br />
+				勒威耶根据所观察到的木星、土星和天王星的位置经<br />
+				过计算独立预测出的地点。
+			</div>
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h51" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第五题</div>
+			<div id="h52" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">地球的天然卫星是___</div>
+			<div id="h53" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：金星<br /><br />
+			    B：火星<br /><br />
+			    C：月球<br /><br />
+			    D：水星<br /></div>
+			<div id="h54" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>C</span><br /><br />
+				注释：地球的天然卫星是月球，也是地球仅有的天然卫星。
+			</div>
+			<div id="h55" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>C</span><br /><br />
+				注释：地球的天然卫星是月球，也是地球仅有的天然卫星。
+			</div>
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h61" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第六题</div>
+			<div id="h62" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">哪两个行星没有天然卫星___</div>
+			<div id="h63" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：水星、金星<br /><br />
+			    B：火星、地球<br /><br />
+			    C：木星、土星<br /><br />
+			    D：火星、海王星<br /></div>
+			<div id="h64" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>A</span><br /><br />
+				注释：在太阳系里，除水星和金星外，其他行星都有天然卫星。
+			</div>
+			<div id="h65" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>A</span><br /><br />
+				注释：在太阳系里，除水星和金星外，其他行星都有天然卫星。
+			</div>
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h71" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第七题</div>
+			<div id="h72" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">哪两个行星间有小行星带___</div>
+			<div id="h73" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：水星、金星<br /><br />
+			    B：火星、木星<br /><br />
+			    C：木星、土星<br /><br />
+			    D：火星、海王星<br /></div>
+			<div id="h74" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>A</span><br /><br />
+				注释：小行星与太阳系中其他行星一样，是沿着<br />
+				椭圆形的轨迹绕太阳公转的无数个小天体。大多<br />
+				数分布在火星和木星之间组成小行星带。
+			</div>
+			<div id="h75" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>A</span><br /><br />
+				注释：小行星与太阳系中其他行星一样，是沿着<br />
+				椭圆形的轨迹绕太阳公转的无数个小天体。大多<br />
+				数分布在火星和木星之间组成小行星带。
+			</div>
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h81" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第八题</div>
+			<div id="h82" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">距离太阳最远的行星是哪一个___</div>
+			<div id="h83" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：天王星<br /><br />
+			    B：土星<br /><br />
+			    C：木星<br /><br />
+			    D：海王星<br /></div>
+			<div id="h84" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>D</span><br /><br />
+				注释：八大行星按距离太阳从近到远排列依次为水星、<br />
+				金星、地球、火星、木星、土星、天王星、海王星。
+			</div>
+			<div id="h85" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>D</span><br /><br />
+				注释：八大行星按距离太阳从近到远排列依次为水星、<br />
+				金星、地球、火星、木星、土星、天王星、海王星。
+			</div>
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h91" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第九题</div>
+			<div id="h92" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">哪两个行星的自转方向与其他行星不一样___</div>
+			<div id="h93" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：金星、天王星<br /><br />
+			    B：金星、土星<br /><br />
+			    C：木星、天王星<br /><br />
+			    D：海王星、天王星<br /></div>
+			<div id="h94" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>A</span><br /><br />
+				注释：八大行星中金星与天王星自东向西进行<br />
+				自转，其他行星自转方向都是自西向东。
+			</div>
+			<div id="h95" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>A</span><br /><br />
+				注释：八大行星中金星与天王星自东向西进行<br />
+				自转，其他行星自转方向都是自西向东。
+			</div>
+		</div>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="h101" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">第十题</div>
+			<div id="h102" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">以下哪个星球不属于八大行星___</div>
+			<div id="h103" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+			    A：天王星<br /><br />
+			    B：地球<br /><br />
+			    C：海王星<br /><br />
+			    D：冥王星<br /></div>
+			<div id="h104" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>回答正确！</span><br /><br />
+				正确答案：<span>D</span><br /><br />
+				注释：在2006年8月24日于布拉格举行的第26届国际<br />
+				天文学联会中通过的第5号决议中，冥王星（Pluto）<br />
+				被划为矮行星，除名于八大行星之外。
+			</div>
+			<div id="h105" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>很遗憾你答错了！</span><br /><br />
+				正确答案：<span>D</span><br /><br />
+				注释：在2006年8月24日于布拉格举行的第26届国际<br />
+				天文学联会中通过的第5号决议中，冥王星（Pluto）<br />
+				被划为矮行星，除名于八大行星之外。
+			</div>
+		</div>
+		
+		<script>
+			home.addEventListener("click",function(){
+						   window.open("../homepage.html")
+						   window.close()
+			})
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>venus-text</title>
+		<script src="../js/aframe.min.0.5.0.js"></script>
+		<script src="../js/aframe-html-shader.min.js"></script>
+		<script src="../js/usingJS.js"></script>
+		<script src="../js/new.js"></script>
+		<style>
+			span{
+				color: #ff5500;;
+			}
+		</style>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<img id="Venus" src="../img/Venus.jpg" />
+				<img id="mp" src="../picture/venus/v4.jpeg" />
+				<img id="m1" src="../picture/venus/v4.jpeg"/>
+				<img id="m2" src="../picture/venus/v5.jpg" />
+				<img id="m3" src="../picture/venus/v3.jpeg" />
+				<img id="m4" src="../picture/venus/v1.jpg" />
+				<img id="m5" src="../picture/venus/v2.jpg" />
+				<video id="myvideo" src="../video/venus.mp4"></video>
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+			</a-assets>
+			<a-entity>
+				<a-camera position="0 1.6 10">
+					<a-cursor color="#fff"></a-cursor>
+					
+					<a-entity visible="false" jbcs>
+						<a-plane material="shader: html; target: #h11; ratio: height; transparent: true; side: double" position="-1 0 -1" scale="0.94 0.94 0.94"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" mcly>
+						<a-plane material="shader: html; target: #h22; ratio: height; transparent: true; side: double" position="0 0.7 -1" scale="0.185 0.185 0.185"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" tcls>
+						<a-plane material="shader: html; target: #h33; ratio: height; transparent: true; side: double" position="0.8 0.3 -1" scale="0.22 0.22 0.22"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" bmdx>
+						<a-plane material="shader: html; target: #h44; ratio: height; transparent: true; side: double" position="0.8 -0.3 -1" scale="0.32 0.32 0.32"></a-plane>
+					</a-entity>
+					
+				</a-camera>
+			</a-entity>
+			
+			<!-- 标记板块 -->
+			<a-entity id="total">
+				<a-entity jiechu id="jiben" position="0 0 3.2" rotation="-15 0 0">
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h1; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="minchen" position="2.6 0 1.6" rotation="-15 60 0">
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h2; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tance" position="2.6 0 -1.6" rotation="-15 120 0">
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h3; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="biaomian" position="0 0 -3.2" rotation="-15 180 0">
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h4; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="shipin" position="-2.6 0 -1.6" rotation="-15 -120 0">
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h5; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tupian" position="-2.6 0 1.6" rotation="-15 -60 0">
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h6; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#e48e5c" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-animation
+				attribute="rotation"
+				to="0 360 0"
+				dur="15000"
+				easing="linear"
+				begin="start"
+				end="stop"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 图片信息 -->
+			<a-entity id="pict" visible="false" seetu>
+				<a-plane id="mm1" src="#m1" 
+				 width="8" height="5" position="0 0 0" rotation="10 0 0" scale="1.1 1.1 1.1">
+				 <a-animation
+				 attribute="position"
+				 to="0 7 0"
+				 dur="800"
+				 easing="linear"
+				 repeat="0"
+				 begin="fade">
+				 </a-animation>
+				</a-plane>
+				<a-plane id="mm2" src="#m2" 
+				width="10" height="4" position="0 0 0" rotation="10 30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="-14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+			    </a-plane>
+				<a-plane id="mm3" src="#m3" 
+				width="9" height="5" position="0 0 0" rotation="10 -30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm4" src="#m4" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="-8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm5" src="#m5" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+			</a-entity>
+			
+			<a-entity cursor-scale id="back" position="0 -5 0">
+				<a-plane
+				width="2" height="0.8" color="#e48e5c" position="0 0 0"
+				transparent="true" opacity="0.5">
+				<a-plane material="shader: html; target: #hback; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.5 0.5 0.5"></a-plane>
+				</a-plane>
+				<a-plane
+				width="2" height="0.8" color="#e48e5c" position="0 0 -0.015" rotation="0 180 0"
+				transparent="true" opacity="0.5">
+				</a-plane>
+			</a-entity>
+			
+			<a-entity position="0 0 0">
+				<a-sphere
+				    id="s" qiehuan
+				    src="#Venus" 
+					radius="2">
+					<a-animation
+					attribute="rotation"
+					to="0 360 0"
+					dur="40000"
+					easing="linear"
+					repeat="indefinite">
+					</a-animation>
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity entity-generator="mixin:rand;num:1000;">
+				<a-animation 
+				attribute="rotation"
+				to="0 360 0"
+				dur="1000000"
+				easing="linear"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 视频信息 -->
+			<a-video shiping
+			src="#myvideo" 
+			width="8" height="4" 
+			position="5 5 0"
+			visible="false"
+			transparent="true" opacity="0.7">
+			</a-video>
+			
+			<a-sky color="#000"></a-sky>
+		</a-scene>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="hback" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">返回</div>
+			<div id="h1" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">基本参数</div>
+			<div id="h2" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">名称来源</div>
+			<div id="h3" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">探测历史</div>
+			<div id="h4" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">其他性质</div>
+			<div id="h5" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">视频介绍</div>
+			<div id="h6" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">图片介绍</div>
+			<div id="h11" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				轨道半径:108,208,930km(0.72个天文单位)<br /><br />
+				轨道偏心率:0.001945315807<br /><br />
+				轨道倾角:3.4°<br /><br />
+				平均轨道运行速度:35.03km/s<br /><br />
+				行星半径:6052km(赤道)<br /><br />
+				质量:(地球质量=1):0.8150<br /><br />
+				密度:5.24克/立方厘米<br /><br />
+				卫星数:0<br /><br />
+				自转周期:243.02日<br /><br />
+				自转方向:自东向西<br /><br />
+				公转周期:224.701日
+			</div>
+			<div id="h22" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;<span>金星</span>（希腊语：Ἀφροδίτη，音译“阿佛洛狄忒”；巴比伦语：Ishtar）是美和爱的女神，
+				之所以会如此命名，也许是对古代人来说，它是已知行星中最亮的一颗。（也有一些异议，认为金星的命名是因为金星的表
+				面如同女性的外貌。）
+			</div>
+			<div id="h33" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>发现</span>：金星在史前就已被人所知晓。除了太阳、月亮外，它是最亮的一颗。<br />
+                金星是一颗近日行星，从地球用望远镜观察它的话，会发现它有位相变化。伽利略对此现象
+				的观察是赞成哥白尼的有关太阳系的太阳中心说的重要证据。
+				<span>访问</span>：第一艘访问金星的飞行器是1962年的水手2号。
+				随后，它又陆续被其他飞行器：金星先锋号，苏联尊严7号、尊严9号访问。
+			</div>
+			<div id="h44" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				金星有时被誉为地球的姐妹星，在有些方面它们非常相像：<br />
+				&nbsp;金星比地球略小一些（95%的地球直径，80%的地球质量）。<br />
+				&nbsp;在相对年轻的表面都有一些环形山口。<br />
+				&nbsp;它们的密度与化学组成都十分类似。<br />
+				&nbsp;由于这些相似点，有时认为在它厚厚的云层下面金星可能与地球非常相像，
+				可能有生命的存在。但是不幸的是，许多有关金星的深层次研究表明，在许多方面
+				金星与地球有本质的不同。
+			</div>
+		</div>
+		
+		<script>
+			document.querySelector("#back").addEventListener("click", function() {
+				window.open("../learn.html")
+				window.close()
+			})
+		</script>
+		
+	</body>
+</html>

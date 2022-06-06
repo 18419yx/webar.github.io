@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>uranus-text</title>
+		<script src="../js/aframe.min.0.5.0.js"></script>
+		<script src="../js/aframe-html-shader.min.js"></script>
+		<script src="../js/usingJS.js"></script>
+		<script src="../js/new.js"></script>
+		<style>
+			span{
+				color: #ff5500;;
+			}
+		</style>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<img id="Uranus" src="../img/Uranus.jpg" />
+				<img id="mp" src="../picture/mars/mp.jpg" />
+				<img id="m1" src="../picture/uranus/u1.jpeg"/>
+				<img id="m2" src="../picture/uranus/u2.jpg" />
+				<img id="m3" src="../picture/uranus/u3.png" />
+				<img id="m4" src="../picture/uranus/u4.jpg" />
+				<img id="m5" src="../picture/uranus/u5.jpg" />
+				<video id="myvideo" src="../video/uranus.mp4"></video>
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+			</a-assets>
+			<a-entity>
+				<a-camera position="0 1.6 10">
+					<a-cursor color="#fff"></a-cursor>
+					
+					<a-entity visible="false" jbcs>
+						<a-plane material="shader: html; target: #h11; ratio: height; transparent: true; side: double" position="-1 0 -1" scale="0.46 0.46 0.46"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" mcly>
+						<a-plane material="shader: html; target: #h22; ratio: height; transparent: true; side: double" position="0 0.7 -1" scale="0.14 0.14 0.14"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" tcls>
+						<a-plane material="shader: html; target: #h33; ratio: height; transparent: true; side: double" position="0.8 0.3 -1" scale="0.42 0.42 0.42"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" bmdx>
+						<a-plane material="shader: html; target: #h44; ratio: height; transparent: true; side: double" position="0.8 -0.3 -1" scale="0.48 0.48 0.48"></a-plane>
+					</a-entity>
+					
+				</a-camera>
+			</a-entity>
+			
+			<!-- 标记板块 -->
+			<a-entity id="total">
+				<a-entity jiechu id="jiben" position="0 0 3.2" rotation="-15 0 0">
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h1; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="minchen" position="2.6 0 1.6" rotation="-15 60 0">
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h2; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tance" position="2.6 0 -1.6" rotation="-15 120 0">
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h3; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="biaomian" position="0 0 -3.2" rotation="-15 180 0">
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h4; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="shipin" position="-2.6 0 -1.6" rotation="-15 -120 0">
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h5; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tupian" position="-2.6 0 1.6" rotation="-15 -60 0">
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h6; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#7ba4c5" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-animation
+				attribute="rotation"
+				to="0 360 0"
+				dur="15000"
+				easing="linear"
+				begin="start"
+				end="stop"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 图片信息 -->
+			<a-entity id="pict" visible="false" seetu>
+				<a-plane id="mm1" src="#m1" 
+				 width="6" height="6" position="0 0 0" rotation="10 0 0" scale="1.1 1.1 1.1">
+				 <a-animation
+				 attribute="position"
+				 to="0 7 0"
+				 dur="800"
+				 easing="linear"
+				 repeat="0"
+				 begin="fade">
+				 </a-animation>
+				</a-plane>
+				<a-plane id="mm2" src="#m2" 
+				width="6" height="6" position="0 0 0" rotation="10 30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="-14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+			    </a-plane>
+				<a-plane id="mm3" src="#m3" 
+				width="9" height="5" position="0 0 0" rotation="10 -30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm4" src="#m4" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="-8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm5" src="#m5" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+			</a-entity>
+			
+			<a-entity cursor-scale id="back" position="0 -5 0">
+				<a-plane
+				width="2" height="0.8" color="#7ba4c5" position="0 0 0"
+				transparent="true" opacity="0.5">
+				<a-plane material="shader: html; target: #hback; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.5 0.5 0.5"></a-plane>
+				</a-plane>
+				<a-plane
+				width="2" height="0.8" color="#7ba4c5" position="0 0 -0.015" rotation="0 180 0"
+				transparent="true" opacity="0.5">
+				</a-plane>
+			</a-entity>
+			
+			<a-entity position="0 0 0">
+				<a-sphere
+				    id="s" qiehuan
+				    src="#Uranus" 
+					radius="2">
+					<a-animation
+					attribute="rotation"
+					to="0 360 0"
+					dur="40000"
+					easing="linear"
+					repeat="indefinite">
+					</a-animation>
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity entity-generator="mixin:rand;num:1000;">
+				<a-animation 
+				attribute="rotation"
+				to="0 360 0"
+				dur="1000000"
+				easing="linear"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 视频信息 -->
+			<a-video shiping
+			src="#myvideo" 
+			width="8" height="4" 
+			position="5 5 0"
+			visible="false"
+			transparent="true" opacity="0.7">
+			</a-video>
+			
+			<a-sky color="#000"></a-sky>
+		</a-scene>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="hback" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">返回</div>
+			<div id="h1" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">基本参数</div>
+			<div id="h2" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">名称来源</div>
+			<div id="h3" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">探测历史</div>
+			<div id="h4" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">组成与大气</div>
+			<div id="h5" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">视频介绍</div>
+			<div id="h6" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">图片介绍</div>
+			<div id="h11" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				公转轨道:距太阳2870990000千米(19.218天文单位)<br /><br />
+				行星半径:25559km(赤道)<br /><br />
+				质量:8.683×10^25kg<br /><br />
+				卫星数:29颗<br /><br />
+				自转方向:自东向西<br /><br />
+			</div>
+			<div id="h22" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;<span>天王星</span>，乌拉诺斯是古希腊神话中的宇宙之神，
+				是最早的至高无上的神。他是盖亚的儿子兼配偶，是Cronus（农神土星）、
+				独眼巨人和泰坦（奥林匹斯山神的前辈）的父亲。
+			</div>
+			<div id="h33" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;<span>发现</span>：天王星是由威廉·赫歇耳通过望远镜系统地搜寻，在1781年3月13日发现的，它是现代发现的第一颗行星。事实上，它曾经被观测到许多次，只不过当时被误认为是另一颗恒星（早在1690年John Flamsteed便已观测到它的存在，但当时却把它编为34 Tauri）。赫歇耳把它命名为"the Georgium Sidus"（天竺葵，又名“乔治亚行星”）来纪念他的资助者，那个对美国人而言臭名昭著的英国国王：乔治三世；其他人却称天王星为“赫歇耳”。由于其他行星的名字都取自希腊神话，因此为保持一致，由波德首先提出把它称为“乌拉诺斯（Uranus）”，但直到1850年才开始广泛使用。<br />
+				&nbsp;&nbsp;<span>访问</span>：只有一艘星际探测器曾到过天王星，那是在1986年1月24日由旅行者2号完成的。
+			</div>
+			<div id="h44" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;天王星基本上是由岩石和各种各样的冰组成的，它仅含有15%的氢和一些氦。<br />
+				&nbsp;&nbsp;如其他所有的气态行星一样，天王星也有带状的云围绕着它快速飘动。但是它们太微弱了，以至只能由旅行者2号经过加工的图片才可看出。<br />
+				&nbsp;&nbsp;天王星显蓝色是其外层大气层中的甲烷吸收了红光的结果。那儿或许有像木星那样的彩带，但它们被覆盖着的甲烷层遮住了。<br />
+				&nbsp;&nbsp;像其他所有气态行星一样，天王星有光环。它们像木星的光环一样暗，但又像土星的光环那样由相当大的直径达到10米的粒子和细小的尘土组成。天王星有11层已知的光环，但都非常暗淡；最亮的那个被称为Epsilon光环。天王星的光环是继土星的被发现后第一个被发现的，这一发现被认为是十分重要的，由此我们知道了光环是行星的一个普遍特征，而不是仅为土星所特有的。
+			</div>
+		</div>
+		
+		<script>
+			document.querySelector("#back").addEventListener("click", function() {
+				window.open("../learn.html")
+				window.close()
+			})
+		</script>
+		
+	</body>
+</html>

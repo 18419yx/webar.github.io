@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>mars-text</title>
+		<script src="../js/aframe.min.0.5.0.js"></script>
+		<script src="../js/aframe-html-shader.min.js"></script>
+		<script src="../js/usingJS.js"></script>
+		<script src="../js/new.js"></script>
+		<style>
+			span{
+				color: #ff5500;
+			}
+		</style>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<img id="Mars" src="../img/Mars.jpg" />
+				<img id="mp" src="../picture/mars/mp.jpg" />
+				<img id="m1" src="../picture/mars/m1.png"/>
+				<img id="m2" src="../picture/mars/m2.jpg" />
+				<img id="m3" src="../picture/mars/m3.jpeg" />
+				<img id="m4" src="../picture/mars/m4.jpg" />
+				<img id="m5" src="../picture/mars/m5.jpeg" />
+				<video id="myvideo" src="../video/mars.mp4"></video>
+				<a-mixin id="rand" geometry="primitive: sphere ;radius:0.5" material="color:#ffffff" random-background></a-mixin>
+			</a-assets>
+			<a-entity>
+				<a-camera position="0 1.6 10">
+					<a-cursor color="#fff"></a-cursor>
+					
+					<a-entity visible="false" jbcs>
+						<a-plane material="shader: html; target: #h11; ratio: height; transparent: true; side: double" position="-1 0 -1" scale="0.94 0.94 0.94"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" mcly>
+						<a-plane material="shader: html; target: #h22; ratio: height; transparent: true; side: double" position="0 0.7 -1" scale="0.19 0.19 0.19"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" tcls>
+						<a-plane material="shader: html; target: #h33; ratio: height; transparent: true; side: double" position="0.8 0.3 -1" scale="0.3 0.3 0.3"></a-plane>
+					</a-entity>
+					
+					<a-entity visible="false" bmdx>
+						<a-plane material="shader: html; target: #h44; ratio: height; transparent: true; side: double" position="0.8 -0.3 -1" scale="0.47 0.47 0.47"></a-plane>
+					</a-entity>
+					
+				</a-camera>
+			</a-entity>
+			
+			<!-- 标记板块 -->
+			<a-entity id="total">
+				<a-entity jiechu id="jiben" position="0 0 3.2" rotation="-15 0 0">
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h1; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="minchen" position="2.6 0 1.6" rotation="-15 60 0">
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h2; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tance" position="2.6 0 -1.6" rotation="-15 120 0">
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h3; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="biaomian" position="0 0 -3.2" rotation="-15 180 0">
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h4; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="shipin" position="-2.6 0 -1.6" rotation="-15 -120 0">
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h5; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-entity jiechu id="tupian" position="-2.6 0 1.6" rotation="-15 -60 0">
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 0"
+					transparent="true" opacity="0.5">
+					<a-plane material="shader: html; target: #h6; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.4 0.4 0.4"></a-plane>
+					</a-plane>
+					<a-plane
+					width="2" height="0.8" color="#d28355" position="0 0 -0.015" rotation="0 180 0"
+					transparent="true" opacity="0.5">
+					</a-plane>
+				</a-entity>
+				
+				<a-animation
+				attribute="rotation"
+				to="0 360 0"
+				dur="15000"
+				easing="linear"
+				begin="start"
+				end="stop"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 图片信息 -->
+			<a-entity id="pict" visible="false" seetu>
+				<a-plane id="mm1" src="#m1" 
+				 width="8" height="5" position="0 0 0" rotation="10 0 0" scale="1.1 1.1 1.1">
+				 <a-animation
+				 attribute="position"
+				 to="0 7 0"
+				 dur="800"
+				 easing="linear"
+				 repeat="0"
+				 begin="fade">
+				 </a-animation>
+				</a-plane>
+				<a-plane id="mm2" src="#m2" 
+				width="10" height="4" position="0 0 0" rotation="10 30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="-14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+			    </a-plane>
+				<a-plane id="mm3" src="#m3" 
+				width="9" height="5" position="0 0 0" rotation="10 -30 0" scale="1.3 1.3 1.3">
+				<a-animation
+				attribute="position"
+				to="14 8 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm4" src="#m4" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="-8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+				<a-plane id="mm5" src="#m5" 
+				width="6" height="6" position="0 0 0">
+				<a-animation
+				attribute="position"
+				to="8 0 0"
+				dur="800"
+				easing="linear"
+				repeat="0"
+				begin="fade">
+				</a-animation>
+				</a-plane>
+			</a-entity>
+			
+			<a-entity cursor-scale id="back" position="0 -5 0">
+				<a-plane
+				width="2" height="0.8" color="#d28355" position="0 0 0"
+				transparent="true" opacity="0.5">
+				<a-plane material="shader: html; target: #hback; ratio: height; transparent: true; side: double" position="0 0 -0.01" scale="0.5 0.5 0.5"></a-plane>
+				</a-plane>
+				<a-plane
+				width="2" height="0.8" color="#d28355" position="0 0 -0.015" rotation="0 180 0"
+				transparent="true" opacity="0.5">
+				</a-plane>
+			</a-entity>
+			
+			<a-entity position="0 0 0">
+				<a-sphere
+				    id="s" qiehuan
+				    src="#Mars" 
+					radius="2">
+					<a-animation
+					attribute="rotation"
+					to="0 360 0"
+					dur="40000"
+					easing="linear"
+					repeat="indefinite">
+					</a-animation>
+				</a-sphere>
+			</a-entity>
+			
+			<a-entity entity-generator="mixin:rand;num:1000;">
+				<a-animation 
+				attribute="rotation"
+				to="0 360 0"
+				dur="1000000"
+				easing="linear"
+				repeat="indefinite">
+				</a-animation>
+			</a-entity>
+			
+			<!-- 视频信息 -->
+			<a-video shiping
+			src="#myvideo" 
+			width="8" height="4" 
+			position="5 5 0"
+			visible="false"
+			transparent="true" opacity="0.7">
+			</a-video>
+			
+			<a-sky color="#000"></a-sky>
+		</a-scene>
+		
+		<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+			<div id="hback" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">返回</div>
+			<div id="h1" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">基本参数</div>
+			<div id="h2" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">名称来源</div>
+			<div id="h3" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">探测历史</div>
+			<div id="h4" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">表面地形</div>
+			<div id="h5" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">视频介绍</div>
+			<div id="h6" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">图片介绍</div>
+			<div id="h11" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				轨道半径:22794km(1.52天文单位)<br /><br />
+				轨道偏心率:0.093<br /><br />
+				轨道倾角:1.8°<br /><br />
+				平均轨道运行速度:24.13km/s<br /><br />
+				行星半径:3398km(赤道)<br /><br />
+				质量:(地球质量=1):0.1074<br /><br />
+				密度:3.94克/立方厘米<br /><br />
+				卫星数:2(火卫一、火卫二)<br /><br />
+				自转周期:1.026日<br /><br />
+				自转方向:自西向东<br /><br />
+				公转周期:686.98日
+			</div>
+			<div id="h22" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				&nbsp;&nbsp;<span>火星</span>（希腊语：Ἄρης，音译“阿瑞斯”）被称为战神。这或许是由于它鲜红的颜色而得来的；
+				火星有时被称为<span>“红色行星”</span>。（趣记：在希腊人之前，古罗马人曾把火星作为农耕之神来
+				供奉。而好侵略扩张的希腊人却把火星作为战争的象征）而三月份的名字也是得自于火星。
+			</div>
+			<div id="h33" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				<span>发现</span>：火星在史前时代就已经为人类所知。由于它被认为是太阳系中人类最好的住所（除地球外），它受到科幻小说家们的喜爱。但可惜的是那条著名的被Lowell“看见”的“运河”以及其他一些什么的，都只是如Barsoomian公主们一样是虚构的。<br />
+				<span>访问</span>：第一次对火星的探测是由<span>水手4号飞行器</span>在1965年进行的。人们接连又作了几次尝试，包括1976年的两艘海盗号飞行器。此后，经过长达20年的间隙，在1997年的7月4日，<span>火星探路者号</span>终于成功地登上火星。
+			</div>
+			<div id="h44" style="position: absolute;color: #ffffff;font-size: 50px;font-family: 宋体">
+				除地球外，火星是具有最多各种有趣地形的固态表面行星。其中不乏一些壮观的地形：<br />
+				&nbsp;<span>奥林匹斯山</span>：它在地表上的高度有24千米（78000英尺），是太阳系中最大的火山。它的基座直径有600千米，并由一座高达6千米（20000英尺）的悬崖环绕着；<br />
+				&nbsp;<span>Tharsis</span>：火星表面的一个巨大凸起，有大约4000千米宽，10千米高；<br />
+				&nbsp;<span>Valles Marineris</span>：深2至7千米，长为4000千米的峡谷群；<br />
+				&nbsp;<span>Hellas Planitia</span>：处于南半球，6000多米深，直径为2000千米的冲击环形山。<br />
+				火星的表面有很多年代已久的环形山。但是也有不少形成不久的山谷、山脊、小山及平原。
+			</div>
+		</div>
+		
+		<script>
+			document.querySelector("#back").addEventListener("click", function() {
+				window.open("../learn.html")
+				window.close()
+			})
+		</script>
+		
+	</body>
+</html>
